@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            width: 60px;
+            height: 60px;
+            border: 1px solid black;
+        }
+
+        .box2 {
+            width: 60px;
+            height: 60px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <script>
+        function traverse() {
+            let arr = [];
+            let elements = [];
+            if (document.all) elements = document.all;
+            else elements = document.getElementsByTagName('*');
+
+            for (let i = 0; i < elements.length; i++) {
+                let ele = elements[i]
+                console.log(ele.tagName)
+                let width = parseFloat(ele.style.width) || ele.offsetWidth;
+                let height = parseFloat(ele.style.height) || ele.offseHeight;
+                if (width > 50 && height > 50) arr.push(elements[i].tagName)
+            } 
+            return arr;
+            window.onload = function () {
+                console.log(traverse());
+            }
+        }
+        console.log(traverse())
+    </script>
+</body>
+
+</html>
