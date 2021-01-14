@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单</title>
+</head>
+<body>
+    <form action="./00.html.html" method="GET">
+    <table width="600px">
+        <tbody>
+            <tr>
+                <td>邮箱地址</td>
+                <td><input type="text" name="address"></td>
+            </tr>
+            <tr>
+                <td>密　　码</td>
+                <td><input type="password" name="password"></td>
+            </tr>
+            <tr>
+                <td>确认密码</td>
+                <td><input type="password" name="turepassword"></td>
+            </tr>
+            <tr>
+                <td>上传头像</td>
+                <td><input type="file" name="upload"></td>
+            </tr>
+            <tr>
+                <td>性　　别</td>
+                <td>
+                    <label for="s1">女</label><input type="radio" name="sex" value="1" id="s1">
+                    <label for="s2">男</label><input type="radio" name="sex" value="0" id="s2">
+                </td>
+            </tr>
+            <tr>
+                <td>兴　　趣</td>
+                <td>
+                    <label for="f1">登山</label> <input type="checkbox" name="bobby"[] value="1" id="f1">
+                    <label for="f2">郊游</label> <input type="checkbox" name="bobby"[] value="2" id="f2">
+                    <label for="f3">钓鱼</label> <input type="checkbox" name="bobby"[] value="3" id="f3">
+                    <label for="f4">养鱼</label> <input type="checkbox" name="bobby"[] value="4" id="f4">
+                    <label for="f5">饲养宠物</label> <input type="checkbox" name="bobby"[] value="5" id="f5">
+                    <label for="f6">网络游戏</label> <input type="checkbox" name="bobby"[] value="6" id="f6">
+                </td>
+            </tr>
+            <tr>
+                <td>国　　家</td>
+                <td>
+                    <select name="country" >
+                        <option value="c" selected>中国</option>
+                        <option value="j">日本</option>
+                        <option value="k">韩国</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <button type="submit" class="b">登录</button>
+                </td>
+
+            </tr>
+            
+        </tbody>
+
+    </table>
+    </form>
+</body>
+</html>
