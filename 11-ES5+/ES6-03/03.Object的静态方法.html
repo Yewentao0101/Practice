@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //练习，判断两个对象是否相等
+        let deepEqual = function(x,y){
+            //判断两个对象是否是基本类型，或是否指向统一内存，直接返回true
+            if(x===y) return true;
+            else if((typeof x == "object" && x!==null)&&(typeof y == "object" && y!==null)){
+                //长度不相同 直接返回false
+                if(Object.keys(x).length!=Object.keys(y).length) return false;
+                //遍历其中一个对象
+                for (let V in x ){
+                    //判断另一个对象是否出现在这个对象
+                    if(y.hasOwnProperty(V)){
+                        //比较两个对象的属性值是否相等
+                        if(!deepEqual(x[V],y[V])){
+                            return false
+                        }
+                    }else{
+                        return true;
+                    }
+                }
+                return false;
+            } 
+        }
+
+
+        //Object.assing(obj1,obj2,obj3)合并对象
+        //       把第二个参数之后的对象合并到了第一个对象上，并返回了第一个对象的地址
+
+        const obj1 = {
+            name: "laowang",
+        }
+        const obj2 = {
+            sex: "nan"
+        }
+        const obj3 = {
+            age: 12
+        }
+        const re = Object.assign(obj1,obj2,obj2)
+        console.log(deepEqual(re,obj1))
+    </script>
+</body>
+</html>

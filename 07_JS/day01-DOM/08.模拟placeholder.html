@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="ipt" value="请输入电话号码">
+    <script>
+        var tIpt = document.getElementById('ipt');
+        tIpt.onfocus = function () {
+            if (tIpt.value === '请输入电话号码') {
+                tIpt.value = "";
+            }
+        }
+
+        tIpt.onblur = function () {
+            if (tIpt.value === '') {
+                tIpt.value = '请输入电话号码';
+            }
+        }
+    </script>
+</body>
+</html>

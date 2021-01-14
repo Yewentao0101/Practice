@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 4000px;
+        }
+
+        #box {
+            width: 400px;
+            height: 400px;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+    <script>
+        var tBox = document.getElementById('box')
+
+        //真正的事件逻辑代码
+        function move() {
+            console.log('xxx')
+        }
+
+        //把move传递给节流函数，节流函数调用以后，返回一个新函数赋值给move事件
+        tBox.onmousemove = throttle(move,200);
+
+
+        function scroll(){
+            console.log("滚滚滚！");
+        }
+        window.onscroll = throttle(scroll,300);
+
+        //节流函数（也叫高阶函数）
+        function throttle(fn,time){
+            //绑定事件，初始化上一次的事件
+            var lastTime = 0;
+            //这个事件是事件触发时真正调用的事件函数
+            return function (){
+                //这个函数就负责数字而看门狗，当允许通过的时候，再代用真正的逻辑代码move
+                var nowTime = Date.now();
+                if(nowTime - lastTime < time){
+                    return;
+                }
+            }
+            lastTime = nowTime;
+
+            //arguments 所在的函数就是真正的事件函数，所以拥有实参event 把event事件对象传递给fn move中就可以使用event事件对象了
+            fn.call(this,arguments[0])
+        }
+    </script>
+</body>
+</html>

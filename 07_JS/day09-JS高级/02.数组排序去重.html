@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        Array.prototype.arrSortDeweighting = function(){
+            this.sort(function(a,b){
+                return a-b;
+            })
+            var newArr = [];
+            for (var i = 0 ;i< this.length;i++){
+                if (this[i]===this[i+1]){
+                    continue
+                }
+                newArr.push(this[i]);
+            }
+            return newArr;
+        }
+        
+        var a = [1,6,3,4,6,,8,6,3,5,9,44];
+        console.log(a.arrSortDeweighting())
+    </script>
+</body>
+</html>

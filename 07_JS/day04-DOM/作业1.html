@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+    <form action="###">
+      <h2>新增鱼儿</h2>
+      <div>
+          <label><input type="text" id="username"  placeholder="请输入姓名" /></label>
+      </div>
+      
+      <div>
+          <label><input type="text" id="gender"  placeholder="请输入性别" />
+          </label>
+      </div>
+      <div>
+          <label><input type="text" id="userage"  placeholder="请输入年龄" />
+          </label>
+      </div>
+
+      <button type="button" id="add">添加</button>
+  </form>
+    <table width='888' border="1" style="border-collapse: collapse;">
+			<caption>静哥的鱼塘</caption>
+			<tr>
+				<th>姓名</th>
+        <th>性别</th>
+        <th>年龄</th>
+				<th>操作</th>
+			</tr>
+			<tr>
+				<td>胡佩奇</td>
+        <td>男</td>
+        <td>18</td>
+				<td><input type="button" value="删除" onclick="delTr(this)"/></td>
+			</tr>
+		</table>
+
+    <script>
+      // 当点击添加按钮时触发下面的方法
+      document.getElementById("add").onclick=function(){
+      // 获取每个文本框中的内容
+  
+      var name = document.getElementById("username").value;
+      var gender = document.getElementById("gender").value;
+      var age = document.getElementById("userage").value;
+  
+      // 添加username
+      var td_username = document.createElement("td");
+      var text_username = document.createTextNode(name);
+      td_username.appendChild(text_username);
+            
+      // 添加gender
+      var td_gender = document.createElement("td");
+      var text_gender = document.createTextNode(gender);
+      td_gender.appendChild(text_gender);
+  
+      // 添加age
+      var td_age = document.createElement("td");
+      var text_age = document.createTextNode(age);
+      td_age.appendChild(text_age);
+        
+        // 添加按钮
+      var td_button = document.createElement("td");
+      var ele_input = document.createElement("input");
+      ele_input.setAttribute("type","button");
+      ele_input.setAttribute("value","删除");
+      ele_input.setAttribute("onclick","delTr(this)");
+      ele_input.style.color="blue"; 
+      td_button.appendChild(ele_input);
+        
+      var ele_tr = document.createElement("tr");
+      ele_tr.appendChild(td_username);
+      ele_tr.appendChild(td_gender);
+      ele_tr.appendChild(td_age);
+      ele_tr.appendChild(td_button);
+      var ele_table =  document.getElementsByTagName("table")[0];
+        
+      ele_table.appendChild(ele_tr);
+    }
+                  
+    function delTr(obj){
+    var table =  obj.parentNode.parentNode.parentNode;
+    var tr = obj.parentNode.parentNode;
+    table.removeChild(tr);			
+    }
+    </script>
+	</body>
+
+</html>

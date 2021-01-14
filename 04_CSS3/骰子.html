@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .box{
+        height: 225px;
+        width: 350px;
+        border: 1px solid pink;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: space-evenly;
+        } 
+    .box > div{
+        width:100px;
+        height:100px;
+        border:1px solid gray;
+        box-sizing:border-box;
+        padding:5px;
+        display:flex;
+    }  
+    .red, .blue{
+        width: 25px;
+        height: 25px;
+        border: 1px solid pink;
+
+        border-radius: 50%;
+    }
+    .red{
+        background-image: radial-gradient(red,black);
+    }
+    .blue{
+        background-image: radial-gradient(blue,black);
+    }
+    .box-1{
+        /*横向居中、纵向居中*/
+        justify-content: center;
+        align-items: center;
+    }
+    .box-2{
+        /* 纵轴作为主轴 */
+        flex-direction: column;
+        /* 主轴居中 */
+        justify-content: space-evenly;
+        /* 垂直轴居中 */
+        align-items: center;
+    }
+    .box-3{
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .box-3 > div:nth-of-type(1){
+        align-self: flex-start;
+    }
+    .box-3 > div:nth-of-type(3){
+        align-self: flex-end;
+    }
+    .box-4{
+        /*box-4中的.column的位置设置了空间分布，横向*/
+        justify-content: space-around;
+    }
+    .box-4 .column{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .box-5{
+         /*box-5中的.column的位置设置了空间分布，横向*/
+         justify-content: space-around;
+         position: relative;
+    }
+    .box-5 .column{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .box-5 > div:nth-of-type(2){
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+    }
+    .box-6{
+        /*box-6中的.column的位置设置了空间分布，横向*/
+        justify-content: space-around;
+    }
+    .box-6 .column{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="box-1">
+            <div class="red"></div>
+        </div>
+        <div class="box-2">
+            <div class="blue"></div>
+            <div class="blue"></div>
+        </div>
+        <div class="box-3">
+            <div class="blue"></div>
+            <div class="blue"></div>
+            <div class="blue"></div>
+        </div>
+        <div class="box-4">
+            <div class="column">
+                <div class="red"></div>
+                <div class="red"></div>
+            </div>
+            <div class="column">
+                <div class="red"></div>
+                <div class="red"></div>
+            </div>
+        </div>
+        <div class="box-5">
+            <div class="column">
+                <div class="blue"></div>
+                <div class="blue"></div>
+            </div>
+            <div class="blue"></div>
+            <div class="column">
+                <div class="blue"></div>
+                <div class="blue"></div>
+            </div>
+        </div>
+        <div class="box-6">
+            <div class="column">
+                <div class="blue"></div>
+                <div class="blue"></div>
+                <div class="blue"></div>
+            </div>
+            <div class="column">
+                <div class="blue"></div>
+                <div class="blue"></div>
+                <div class="blue"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

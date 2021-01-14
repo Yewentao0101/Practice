@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="ipt">
+
+    <script>
+        // 失去焦点事件：onblur
+        // 获取焦点事件：onfocus
+        var tIpt = document.getElementById("ipt");
+        tIpt.onfocus = function(){
+            console.log('获得焦点');
+        }
+        tIpt.onblur = function(){
+            console.log('失去焦点');
+        }
+    </script>
+</body>
+</html>

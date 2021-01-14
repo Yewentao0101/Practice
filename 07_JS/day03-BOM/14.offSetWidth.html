@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            padding: 10px;
+            border: 1px solid #000;
+            margin: 15px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div id="box">
+            <span id="con">你真TM是个小可爱XXXXXXX</span>
+        </div>
+        <img src="./mmexport1603698371709 copy.jpg" alt="">
+    </div>
+    <script>
+        var tBox = document.getElementById('box');
+        var tCon = document.getElementById('con');
+        var tImg = document.querySelector('img');
+
+        console.log(tBox.offsetWidth);
+        console.log(tCon.offsetWidth);
+        console.log(tCon.offsetHeight);
+        console.log(tImg.offsetWidth);//预加载！！
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/normalize.css" type="text/css">
+    <link rel="stylesheet" href="./appleHeader/iconfont.css" ype="text/css">
+    <title>Document</title>
+    <style>
+        ul{
+            margin: 0;
+            padding: 0px;
+            list-style-type: none;
+        }
+        #menu{
+            background-color: black;
+            display: flex;
+            justify-content: space-between;
+        }
+        #menu li ul{
+            display: none;
+        }
+        #menu > li{
+            height: 48px;
+            line-height: 48px;
+            margin-left:10px ;
+            margin-right: 10px;
+            /* border: 1px solid red; */
+        }
+        #menu > li a{
+            font-size: 24px;
+            color: #fff;
+            text-decoration: none;
+        }
+        @media (min-width:768px){
+            #menu > li:nth-of-type(1) > a{
+                display: none;
+            }
+            #menu > li:nth-of-type(1) > ul{
+                display: flex;
+                justify-content: space-evenly;
+            }
+            #menu > li{
+                margin: 0px;
+            }
+            #menu > li a{
+                font-size: 14px;
+            }
+            #menu > li a.iconfont{
+                font-size: 20px;
+            }
+            #menu > li:nth-of-type(1){
+                flex-grow:0.8;
+            }
+            #menu > li:nth-of-type(2){
+                text-align:center;
+                flex-grow:0.1;
+                order:-1;
+            }
+            #menu > li:nth-of-type(3){
+                flex-grow:0.1;
+                text-align:center;
+                }
+        }
+    </style>
+</head>
+<body>
+    <ul id="menu">
+        <li>
+            <a href="#" class="iconfont icon-caidan"></a>
+            <ul>
+                <li><a href="#">Mac</a></li>
+                <li><a href="#">iPad</a></li>
+                <li><a href="#">iPhone</a></li>
+                <li><a href="#">Watch</a></li>
+                <li><a href="#">Music</a></li>
+                <li><a href="#">技术支持</a></li>
+                <li><a href="#" class="iconfont icon-search"></a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="iconfont icon-pingguo"></a>
+        </li>
+        <li>
+            <a href="#" class="iconfont icon-gouwudai"></a>
+        </li>
+    </ul>
+</body>
+</html>

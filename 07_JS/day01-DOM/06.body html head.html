@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var tHtml = document.getElementsByTagName("html")[0];
+        var tBody = document.getElementsByTagName("body")[0];
+        var tHead = document.getElementsByTagName("head")[0];
+
+        console.log(tHtml, tBody, tHead)
+        console.log(tHtml === document.documentElement)
+        console.log(tBody === document.body)
+        console.log(tHead === document.head)
+    </script>
+</body>
+</html>

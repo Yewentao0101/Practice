@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/data.js"></script>
+<body>
+    <div class="outer">
+        <header class="header">
+            <div class="top">
+                <div class="top-1">
+                    <div class="top-1-left">
+                        <p>尚品汇欢迎您</p>
+                        <p>
+                            请
+                            <a href="javascript:;">登录</a>
+                            <a href="javascript:;">免费注册</a>
+                        </p>
+                    </div>
+                    <div class="top-1-right">
+                        <a href="javascript:;">我的订单</a>
+                        <a href="javascript:;">我的购物车</a>
+                        <a href="javascript:;">我的尚品汇</a>
+                        <a href="javascript:;">尚品汇会员</a>
+                        <a href="javascript:;">企业采购</a>
+                        <a href="javascript:;">关注尚品汇</a>
+                        <a href="javascript:;">合作招聘</a>
+                        <a href="javascript:;">商家后台</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="headerlogo">
+                <h1 class="logo">
+                    <a href="javascript:;">
+                        <img src="./image/Logo.png" alt="">
+                    </a>
+                </h1>
+                <div class="input-search">
+                    <input type="text">
+                    <button>搜索</button>
+                </div>
+            </div>
+        </header>
+        <div class="nav-box">
+            <div class="Nav">
+                <h3>所有商品分类</h3>
+                <nav>
+                    <a href="javascript:;">服装城</a>
+                    <a href="javascript:;">美妆馆</a>
+                    <a href="javascript:;">尚品汇超市</a>
+                    <a href="javascript:;">全球购</a>
+                    <a href="javascript:;">闪购</a>
+                    <a href="javascript:;">团购</a>
+                    <a href="javascript:;">有趣</a>
+                    <a href="javascript:;">秒杀</a>
+                </nav>
+            </div>
+        </div>
+        <div class="Phone">
+            <div class="PhoneClass">
+                <a href="javascript:;">手机、数码、通讯手机</a>
+                <a href="javascript:;">Apple苹果</a>
+                <a>iphone 6S系类</a>
+            </div>
+            <div class="Phone-Context">
+                <div class="Phone-Context-1">
+                    <div class="scaleBig">
+                        <div class="SPic">
+                            <img src="./image/s1.png" alt="">
+                            <div class="dragFrame"></div>
+                        </div>
+                        <div class="LPic">
+                            <img src="./image/b1.png" alt="">
+                        </div>
+                    </div>
+                    <div class="under-scroll">
+                        <p class="under-scroll-left">&lt;</p>
+                        <div class="imgLists-box">
+                            <ul class="imgLists">
+                                <!-- <li><img src="./image/s1.png" alt=""></li>
+                                <li><img src="./image/s2.png" alt=""></li>
+                                <li><img src="./image/s3.png" alt=""></li>
+                                <li><img src="./image/s1.png" alt=""></li>
+                                <li><img src="./image/s2.png" alt=""></li>
+                                <li><img src="./image/s3.png" alt=""></li>
+                                <li><img src="./image/s1.png" alt=""></li>
+                                <li><img src="./image/s2.png" alt=""></li>
+                                <li><img src="./image/s3.png" alt=""></li>
+                                <li><img src="./image/s1.png" alt=""></li>
+                                <li><img src="./image/s2.png" alt=""></li>
+                                <li><img src="./image/s3.png" alt=""></li> -->
+                            </ul>
+                        </div>
+                        <p class="under-scroll-right">&gt;</p>
+                    </div>
+                </div>
+                <div class="Phone-Context-2">
+                    <div class="phone-detailed-information">
+                        <!-- <h3 class="title">' + goodsDetail.title + '</h3>
+                        <p class="under-title">' + goodsDetail.recommend + '</p>
+                        <div class="price">
+                            <div class="price-detail">
+                                <p>价&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;格</p>
+                                <p>￥ <span>' + goodsDetail.price + '</span> 元</p>
+                            </div>
+                            <div class="combo">
+                                <p>促&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;销</p>
+                                <p><span>' + goodsDetail.promoteSales.type + '</span>' + goodsDetail.promoteSales.content + '</p>
+                            </div>
+                        </div>
+                        <div class="support">
+                            <div class="support-detail">
+                                <p>支&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;持</p>
+                                <p>' + goodsDetail.support + '</p>
+                            </div>
+                            <div class="address">
+                                <p>配&nbsp;送&nbsp;至</p>
+                                <p>' + goodsDetail.address + '</p>
+                            </div>
+                        </div> -->
+                    </div>
+
+                    <div class="ProductChooseInsert"></div>
+
+                    <div class="product-choose">
+<!--                    <dl>
+                            <dt>选择颜色</dt>
+                            <dd>金色</dd>
+                            <dd>银色</dd>
+                            <dd>黑色</dd>
+                        </dl>
+                        <dl>
+                            <dt>内存容量</dt>
+                            <dd>16G</dd>
+                            <dd>32G</dd>
+                            <dd>64G</dd>
+                            <dd>128G</dd>
+                        </dl>
+                        <dl>
+                            <dt>选择版本</dt>
+                            <dd>公开版</dd>
+                            <dd>移动版</dd>
+                        </dl>
+                        <dl>
+                            <dt>选择优惠</dt>
+                            <dd>官方标配</dd>
+                            <dd>移动优惠版</dd>
+                            <dd>电信优惠版</dd>
+                        </dl> -->
+                    </div>
+                    <div class="product-number">
+                        <div class="num">
+                            <input type="text" value="1" readonly>
+                            <button class="add">+</button>
+                            <button class="sub">-</button>
+                        </div>
+                        <div class="add-shopping-car">加入购物车</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="productContent">
+            <aside class="productContentLeft">
+                <div class="tabTitle">
+                    <h4 class="active">相关分类</h4>
+                    <h4>推荐品牌</h4>
+                </div>
+                <div class="tabContent">
+                    <div class="tabDetailChoose active">
+                        <ul class='partList'>
+                            <li><a href="javascript:;"> 手机</a></li>
+                            <li><a href="javascript:;">手机壳</a></li>
+                            <li><a href="javascript:;">内存卡</a></li>
+                            <li><a href="javascript:;">Iphone配件</a></li>
+                            <li><a href="javascript:;">贴膜</a></li>
+                            <li><a href="javascript:;">手机耳机</a></li>
+                            <li><a href="javascript:;">移动电源</a></li>
+                            <li><a href="javascript:;">平板电脑</a></li>
+                        </ul>
+                        <ul class="productList">
+                            <li>
+                                <div class="productlImg"><img src="./image/part01.png" alt=""></div>
+                                <h4>Apple苹果iPhone 6s (A1699)</h4>
+                                <p>¥6088.00</p>
+                                <div class="addShoppingCar"><a href="">加入购物车</a></div>
+                            </li>
+                            <li>
+                                <div class="productlImg"><img src="./image/part01.png" alt=""></div>
+                                <h4>Apple苹果iPhone 6s (A1699)</h4>
+                                <p>¥6088.00</p>
+                                <div class="addShoppingCar"><a href="">加入购物车</a></div>
+                            </li>
+                            <li>
+                                <div class="productlImg"><img src="./image/part01.png" alt=""></div>
+                                <h4>Apple苹果iPhone 6s (A1699)</h4>
+                                <p>¥6088.00</p>
+                                <div class="addShoppingCar"><a href="">加入购物车</a></div>
+                            </li>
+                            <li>
+                                <div class="productlImg"><img src="./image/part01.png" alt=""></div>
+                                <h4>Apple苹果iPhone 6s (A1699)</h4>
+                                <p>¥6088.00</p>
+                                <div class="addShoppingCar"><a href="">加入购物车</a></div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tabDetailChoose">
+                        <ul class='partList'>
+                            <li><a href="javascript:;"> 手机</a></li>
+                            <li><a href="javascript:;">手机壳</a></li>
+                            <li><a href="javascript:;">内存卡</a></li>
+                            <li><a href="javascript:;">Iphone配件</a></li>
+                            <li><a href="javascript:;">贴膜</a></li>
+                            <li><a href="javascript:;">手机耳机</a></li>
+                            <li><a href="javascript:;">移动电源</a></li>
+                            <li><a href="javascript:;">平板电脑</a></li>
+                        </ul>
+                        <ul class="productList">
+                            <li>
+                                <div class="productlImg"><img src="./image/part01.png" alt=""></div>
+                                <h4>Apple苹果iPhone 12 (ZZZ777)</h4>
+                                <p>¥6666.00</p>
+                                <div class="addShoppingCar"><a href="">加入购物车</a></div>
+                            </li>
+                            <li>
+                                <div class="productlImg"><img src="./image/part01.png" alt=""></div>
+                                <h4>Apple苹果iPhone 12 (ZZZ777)</h4>
+                                <p>¥6666.00</p>
+                                <div class="addShoppingCar"><a href="">加入购物车</a></div>
+                            </li>
+                            <li>
+                                <div class="productlImg"><img src="./image/part01.png" alt=""></div>
+                                <h4>Apple苹果iPhone 12 (ZZZ777)</h4>
+                                <p>¥6666.00</p>
+                                <div class="addShoppingCar"><a href="">加入购物车</a></div>
+                            </li>
+                            <li>
+                                <div class="productlImg"><img src="./image/part01.png" alt=""></div>
+                                <h4>Apple苹果iPhone 12 (ZZZ777)</h4>
+                                <p>¥6666.00</p>
+                                <div class="addShoppingCar"><a href="">加入购物车</a></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+            <div class="detail">
+                <div class="chooseBox">
+                    <h4 class="match">选择搭配</h4>
+                    <div class="productMatch">
+                        <div class="choosePhone">
+                            <img src="./image/l-m01.png" alt="">
+                            <p>¥5299</p>
+                            <i>+</i>
+                        </div>
+                        <ul class="matchs">
+                            <li class="matchsItem">
+                                <img src="./image/dp01.png" alt="">
+                                <p>Feless费勒斯VR</p>
+                                <label>
+                                    <input type="checkbox" value="39">
+                                    <span>39</span>
+                                </label>
+                            </li>
+                            <li class="matchsItem">
+                                <img src="./image/dp02.png" alt="">
+                                <p>Feless费勒斯VR</p>
+                                <label>
+                                    <input type="checkbox" value="50">
+                                    <span>50</span>
+                                </label>
+                            </li>
+                            <li class="matchsItem">
+                                <img src="./image/dp03.png" alt="">
+                                <p>Feless费勒斯VR</p>
+                                <label>
+                                    <input type="checkbox" value="59">
+                                    <span>59</span>
+                                </label>
+                            </li>
+                            <li class="matchsItem">
+                                <img src="./image/dp04.png" alt="">
+                                <p>Feless费勒斯VR</p>
+                                <label>
+                                    <input type="checkbox" value="99">
+                                    <span>99</span>
+                                </label>
+                            </li>
+                        </ul>
+                        <div class="chooseResult">
+                            <div class="num">已选购0件商品</div>
+                            <p class="priceTitle">套餐价</p>
+                            <p class="price">¥5299</p>
+                            <button class="addShopcar">加入购物车</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="productIntroduceBox">
+                    <ul class="tabProductIntroduce">
+                        <li class="active">
+                            <a href="###">商品介绍</a>
+                        </li>
+                        <li class="">
+                            <a href="###">规格与包装</a>
+                        </li>
+                        <li class="">
+                            <a href="###">售后保障</a>
+                        </li>
+                        <li class="">
+                            <a href="###">商品评价</a>
+                        </li>
+                        <li class="">
+                            <a href="###">手机社区</a>
+                        </li>
+                    </ul>
+                    <div class="tabProductDetail">
+                        <div id="proPetail1" class="tabDetailChoose active">
+                            <ul class="goods-intro">
+                                <li>分辨率：1920*1080(FHD)</li>
+                                <li>后置摄像头：1200万像素</li>
+                                <li>前置摄像头：500万像素</li>
+                                <li>核 数：其他</li>
+                                <li>频 率：以官网信息为准</li>
+                                <li>品牌： Apple</li>
+                                <li>商品名称：APPLEiPhone 6s Plus</li>
+                                <li>商品编号：1861098</li>
+                                <li>商品产地：中国大陆</li>
+                                <li>商品毛重：0.51kg</li>
+                                <li>热点：指纹识别，Apple Pay，金属机身，拍照神器</li>
+                                <li>系统：苹果（IOS）</li>
+                                <li>像素：1000-1600万品毛重：0.51kg</li>
+                                <li>机身内存：64GB</li>
+                            </ul>
+                            <div class="imgDetailShow">
+                                <img src="./image/intro01.png" alt="">
+                                <img src="./image/intro02.png" alt="">
+                                <img src="./image/intro03.png" alt="">
+                            </div>
+                        </div>
+                        <div id="proPetail2" class="tabDetailChoose">规格与包装</div>
+                        <div id="proPetail3" class="tabDetailChoose">售后保障</div>
+                        <div id="proPetail4" class="tabDetailChoose">商品评价</div>
+                        <div id="proPetail5" class="tabDetailChoose">手机社区</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="asideFrame">
+            <div class="content"></div>
+            <div class="asideCon"></div>
+            <ul class="asideConList">
+                <li>
+                    <i></i>
+                    <p>商品会员</p>
+                </li>
+                <li>
+                    <i></i>
+                    <p>购物车</p>
+                </li>
+                <li>
+                    <i></i>
+                    <p>我的关注</p>
+                </li>
+                <li>
+                    <i></i>
+                    <p>我的足迹</p>
+                </li>
+                <li>
+                    <i></i>
+                    <p>我的消息</p>
+                </li>
+                <li>
+                    <i></i>
+                    <p>咨询静哥</p>
+                </li>
+            </ul>
+            <div class="backTop"></div>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener("DOMContentLoaded",function(){
+            enlargement();
+
+            function enlargement(){
+                var tScaleBig = document.querySelector('.scaleBig');
+                var tDragFrame = document.querySelector('.dragFrame');
+                var tSPic = document.querySelector('.SPic');
+                var tLPic = document.querySelector('.LPic');
+                var tLPicImg = document.querySelector('.LPic img');
+
+                tSPic.onmousemove = function(e){
+                    tDragFrame.style.display = "block";
+                    tLPic.style.display = "block";
+
+                    //  获取拖拽框的宽高
+                    var tDragFrameWH = {
+                        width : tDragFrame.offsetWidth,
+                        height : tDragFrame.offsetHeight
+                    }
+                    //获取放大镜区域到屏幕边缘的距离
+                    //小图到视口的距离
+                    var tElgToScreen = {
+                        x : tSPic.getBoundingClientRect().left,
+                        y : tSPic.getBoundingClientRect().top
+                    }
+                    //拖拽框的定位就是鼠标的client减去拖拽框宽度的一半（保证鼠标在正中心减去小图到屏幕的距离
+                    var tDragFrameLocation = {
+                        x : e.clientX - tDragFrameWH.width / 2 -tElgToScreen.x,
+                        y : e.clientY - tDragFrameWH.height / 2 -tElgToScreen.y
+                    }
+                    // console.log(tDragFrameLocation.y)
+                    //临界值判断
+                    if(tDragFrameLocation.x <= 0){
+                        tDragFrameLocation.x = 0;
+                    }else if(tDragFrameLocation.x >= tSPic.clientWidth - tDragFrame.offsetWidth){
+                        tDragFrameLocation.x = tSPic.clientWidth - tDragFrame.offsetWidth;
+                    }
+
+                    if(tDragFrameLocation.y <= 0){
+                        tDragFrameLocation.y = 0;
+                    }else if(tDragFrameLocation.y >= tSPic.clientHeight - tDragFrame.offsetHeight){
+                        tDragFrameLocation.y= tSPic.clientHeight - tDragFrame.offsetHeight;
+                    }
+                    //赋值
+                    tDragFrame.style.left = tDragFrameLocation.x + "px";
+                    tDragFrame.style.top  = tDragFrameLocation.y + "px";
+
+                    //求比例 scale = 大图能走/ 小图能走
+                    var scale = (tLPicImg.clientWidth - tLPic.offsetWidth)/(tSPic.clientWidth -  tDragFrame.offsetWidth);
+
+                    //计算放大镜走的值  -拖拽框走的值 * 比例
+                    tLPicImg.style.left = -tDragFrameLocation.x * scale + "px";
+                    tLPicImg.style.top = -tDragFrameLocation.y * scale + "px";
+                }
+                tScaleBig.onmouseleave = function(e){
+                    tDragFrame.style.display = "none";
+                    tLPic.style.display = "none";
+                }
+            }
+
+            thumbnail();
+            function thumbnail (){
+                var tLeft = document.querySelector('.under-scroll .under-scroll-left');
+                var tRight = document.querySelector('.under-scroll .under-scroll-right');
+                var tImgLists = document.querySelector('.under-scroll .imgLists-box .imgLists ');
+                //获取放大镜数据
+                var picDate = goodData.imgsrc;
+                //用数据生成缩略图
+                picDate.forEach(function(item){
+                    var newLi = document.createElement("li");
+                    var newImg = new Image();
+                    newImg.src = item.s;
+                    newLi.appendChild(newImg);
+                    tImgLists.appendChild(newLi);
+                })
+
+                var tImgListsLis = document.querySelectorAll('.under-scroll .imgLists-box .imgLists li');
+                //初始位置
+                var initialPosition = 0;
+                //每次走的图片数量
+                var eachMovePicNum = 2;
+                //当前页显示的图片数量
+                var nowShowPicNum = 5 ;
+                //每点击一次移动距离
+                var eachMoveDistance = eachMovePicNum * tImgListsLis[0].offsetWidth;
+                //总共可以走的距离
+                var allMoveDistance = (tImgListsLis.length - nowShowPicNum) * tImgListsLis[0].offsetWidth;
+
+                //点击事件
+                tRight.onclick = function(){
+                    //判断剩下的距离够不够点击一次移动的距离
+                    if(allMoveDistance - initialPosition < eachMoveDistance){
+                        initialPosition = allMoveDistance;
+                    }else{
+                        initialPosition += eachMoveDistance  ;
+                    }
+                    tImgLists.style.transform = "translateX("+ -initialPosition +"px)" ;
+                    
+                }
+
+                tLeft.onclick = function(){
+                    if(initialPosition < eachMoveDistance){
+                        initialPosition = 0;
+                    }else{
+                        initialPosition -= eachMoveDistance  ;
+                    }
+                    tImgLists.style.transform = "translateX("+ -initialPosition +"px)" ;
+                }
+
+            }
+        
+            thumbnailClick();
+            function thumbnailClick(){
+                var tImgListsLisImg = document.querySelectorAll('.under-scroll .imgLists-box .imgLists li img')
+                var tSPicImg = document.querySelector('.SPic img')
+                var tLPicImg = document.querySelector('.LPic img')
+                //获取放大镜数据
+                var picDate = goodData.imgsrc;
+
+                tImgListsLisImg.forEach(function(item,index){
+                    item.onclick = function(){
+                        tSPicImg.src = item.src;
+                        tLPicImg.src = picDate[index].b
+                    }
+                })
+            }
+            
+            goodDetail();
+            function goodDetail(){
+                var productDetail = goodData.goodsDetail;
+                var tInformation = document.querySelector('.phone-detailed-information')
+                var txtContent = '<h3 class="title">' + productDetail.title + '</h3>\
+                        <p class="under-title">' + productDetail.recommend + '</p>\
+                        <div class="price">\
+                            <div class="price-detail">\
+                                <p>价&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;格</p>\
+                                <p>￥ <span>' + productDetail.price + '</span> 元</p>\
+                            </div>\
+                            <div class="combo">\
+                                <p>促&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;销</p>\
+                                <p><span>' + productDetail.promoteSales.type + '</span>' +productDetail.promoteSales.content + '</p>\
+                            </div>\
+                        </div>\
+                        <div class="support">\
+                            <div class="support-detail">\
+                                <p>支&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;持</p>\
+                                <p>' + productDetail.support + '</p>\
+                            </div>\
+                            <div class="address">\
+                                <p>配&nbsp;送&nbsp;至</p>\
+                                <p>' + productDetail.address + '</p>\
+                            </div>\
+                        </div>';
+                        tInformation.innerHTML= txtContent
+            }
+        
+            productChooseFn();
+            function productChooseFn(){
+                var tProductChoose = document.querySelector('.product-choose');
+                var crumbData = goodData.goodsDetail.crumbData;
+
+                //遍历生成Dl
+                crumbData.forEach(function(item,index){
+                    var tDl = document.createElement("dl");
+                    var tDt = document.createElement("dt");
+                    //根据每一个dl中的数据生成dt
+                    tDt.textContent = item.title;
+                    tDl.appendChild(tDt);
+                    //遍历每一额dl数据中的值 生成dd
+                    item.data.forEach(function(item,index){
+                        var tDd = document.createElement("dd");
+                        tDd.textContent = item.type;
+                        tDd.dataset.price=item.changePrice;
+                        tDl.appendChild(tDd)
+                    })
+                    //插入到页面
+                    tProductChoose.appendChild(tDl);
+                })
+            }
+        
+            productChooseClick();
+            function productChooseClick(){
+                var tDls = document.querySelectorAll('.product-choose dl')
+                var tProductChooseInsert = document.querySelector(".ProductChooseInsert")
+                //定义数组，用来保存每一个dl中的选中项，默认是无
+                var arr = new Array(tDls.length);
+                arr.fill(false);
+
+                //遍历dl
+                tDls.forEach(function(item,index){
+                    //在当前dl中，获取所有的dd
+                    var tDds = item.querySelectorAll('dd');
+                    //给所有的Dd绑定点击事件
+                    tDds.forEach(function(item){
+                        //给所有的dd绑定点击事件
+                        item.onclick = function(){
+                            //清空所有样式
+                            tDds.forEach(function(item,index){
+                                item.style.color = "#666"
+                            })
+                            //给当前元素添加样式
+                            item.style.color = "red"
+                            //点击完成之后，改变对象数组项的内容
+                            arr[index] = this;
+
+                            //每次插入Mark之前，清空mark所在的容器
+                            tProductChooseInsert.innerHTML = "";
+                            //重新遍历数组，按照顺序输出mark标签
+                            arr.forEach(function(item,index){
+                                //如果不存在 则直接退出
+                                if(!item){
+                                    return;
+                                }
+
+                                var tMark = document.createElement("mark");
+                                //删除X按钮
+                                var tDeleted = document.createElement("a");
+                                tDeleted.textContent = "X";
+                                tDeleted.dataset.index = index;
+                                tMark.textContent = item.textContent;
+                                tMark.appendChild(tDeleted);
+                                tProductChooseInsert.appendChild(tMark)
+                            })
+
+                            //获取所有的删除按钮 并绑定点击事件
+                            var tDeleteds = document.querySelectorAll("mark a");
+                            tDeleteds.forEach(function(item,index){
+                                item.onclick = function(){
+                                    //删除当前的mark
+                                    this.parentNode.parentNode.removeChild(this.parentNode);
+                                    //删除数组中的值
+                                    arr[item.dataset.index] = false;
+                                    //根据删除按钮上携带的下标，选中对应的dl 清空dl并给第一个元素默认红色
+                                    var tDeletedDd = tDls[item.dataset.index].querySelectorAll('dd');
+                                    tDeletedDd.forEach(function(item){
+                                        item.style.color = "#666";
+                                    })
+                                    tDeletedDd[0].style.color = "red"
+                                    calculatePrice(arr);
+                                }
+                            })
+                            calculatePrice(arr);
+                        }
+                    })
+                })
+            }
+
+            //计算价格
+           function calculatePrice(arr){
+                var tInput = document.querySelector(".product-number .num input");
+                //初始价格是单价*数量
+                var initialPrice = goodData.goodsDetail.price * tInput.value;
+                var tPriceDetail = document.querySelector('.price-detail p span');
+                //遍历数组，得到内容的价钱
+                arr.forEach(function(item){
+                    if(!item){
+                        return;
+                    }
+                    initialPrice += item.dataset.price * tInput.value;
+                })
+                tPriceDetail.innerHTML = initialPrice;
+            }
+
+            num();
+            function num(){
+                var tAdds = document.querySelector('.product-number .num .add');
+                var tSubs = document.querySelector('.product-number .num .sub');
+                var tInput = document.querySelector('.product-number .num input');
+                var tPriceDetail = document.querySelector('.price-detail p span');
+                var count = 1;
+                tAdds.onclick = function(){
+                    var nowPrice = +tPriceDetail.textContent;
+                    count++;
+                    tInput.value = count;
+                    //每次拿到价钱之后，计算出单价，再乘以新的数量
+                    tPriceDetail.textContent = nowPrice/(count - 1)*count;
+                }
+                tSubs.onclick = function(){
+                    var nowPrice = +tPriceDetail.textContent;
+                    count--;
+                    if(count <= 0){
+                        count = 1;
+                        return;
+                    }
+                    tInput.value = count;
+                    //每次拿到价钱之后，计算出单价，再乘以新的数量
+                    tPriceDetail.textContent = nowPrice/(count + 1)*count;
+                }
+
+            }
+        
+            //tab切换封装 用于侧边栏tab切换、商品详情内容切换、商品内容区左侧tab切换
+            function Tab(tTitles,tCons){
+                this.tTitles = tTitles;
+                this.tCons = tCons;
+                var that = this;
+                //遍历  绑定事件
+                this.tTitles.forEach(function(item,index){
+                    item.onclick=function(){
+                        that.click(this,index)
+                    }
+                })
+            }
+            Tab.prototype.click = function(target,i){
+                var that = this;
+                this.tTitles.forEach(function(item,index){
+                    item.classList.remove("active");
+                    that.tCons[index].classList.remove("active");
+                })
+                target.classList.add("active");
+                this.tCons[i].classList.add("active");
+            }
+
+            //商品内容区左侧tab切换
+            productLeftTab();
+            function  productLeftTab() {
+                var tTitles = document.querySelectorAll('.tabTitle h4');
+                var tCons = document.querySelectorAll('.tabContent .tabDetailChoose');
+                new Tab(tTitles, tCons);
+            }
+
+            //商品详情内容切换
+            productDetailTab();
+            function productDetailTab() {
+                var tTitles = document.querySelectorAll('.tabProductIntroduce li');
+                var tCons = document.querySelectorAll('.tabProductDetail .tabDetailChoose');
+                new Tab(tTitles, tCons);
+            }
+
+            asideClick();
+
+            function asideClick() {
+                var tAsideFrame = document.querySelector('.asideFrame');
+                var tAsideCon = document.querySelector('.asideCon');
+                var flag = false;
+                tAsideCon.onclick = function () {
+                    if (flag) {
+                        tAsideFrame.style.right = "-294px";
+                    } else {
+                        tAsideFrame.style.right = "0px";
+                    }
+                    flag = !flag;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

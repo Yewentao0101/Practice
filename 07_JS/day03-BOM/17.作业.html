@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!--作业1：
+    已知一个地址"http://www.baidu.com:80?user=laoli&pass=123456"
+    把查询字符串以对象的形式表现出来，得到一个对象{user:"laoli",pass:"123456"}
+
+作业2：
+    已知一个查询字符串的对象{user:"laoli",pass:"123456"}
+    已知一个地址http://www.baidu.com:80
+    得到一个url字符串"http://www.baidu.com:80?user=laoli&pass=123456"
+ -->
+ <script>
+ var url = "http://www.baidu.com:80?user=laoli&pass=123456";
+    var obj = {};
+    var Arr = url.split("?");
+    console.log(Arr);
+    console.log(Arr[1]);//user=laoli&pass=123456
+    var newArr = Arr[1].split("&");
+    console.log(newArr);
+    for (var i = 0; i < newArr.length; i++) {
+        console.log(newArr[i].split("="))
+        obj[newArr[i].split("=")[0]] = newArr[i].split("=")[1];
+    }
+    console.log(obj);
+
+
+/*     var obj = {user: "laoli", pass: "12345"};
+    var url = "http://www.baidu.com:80";
+    var arr = [];
+    
+    for(var i in obj){
+        var str = i + "=" + obj[i];
+        console.log(str);
+        arr.push(str);
+        console.log(arr);
+    }
+    var newStr = arr.join("&");
+    console.log(newStr);
+
+    var newUrl = url + "?" + newStr;
+    console.log(newUrl); */
+
+    </script>
+</body>
+</html>

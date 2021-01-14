@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fn(){
+            this.a=1;
+            console.log(this)
+        }
+        fn()  //window
+
+        var obj = {
+            name : "xxx",
+            do : function(){
+                console.log(this)
+                fn() // window
+            }
+        }
+        obj.do(); // obj
+
+
+        var fn2 = obj.do;
+        fn2();  //window
+        document.onclick = obj.do;   //document
+
+        document.onclick = function (){
+            console.log(this)  //document
+            fn()   //  window
+        }  
+
+        var f = new fn();  //f
+        fn.call(obj);  //obj
+    </script>
+</body>
+</html>

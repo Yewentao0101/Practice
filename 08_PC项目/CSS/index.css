@@ -1,0 +1,637 @@
+.header .top {
+  width: 100%;
+  background-color: #eaeaea;
+}
+.header .top .top-1 {
+  height: 30px;
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .top .top-1-left {
+  display: flex;
+}
+.header .top .top-1-left p {
+  margin-right: 10px;
+}
+.header .top .top-1-left a + a {
+  border-left: 1px solid #3c3c3c;
+  padding-left: 5px;
+}
+.header .top .top-1-right a {
+  margin-right: 5px;
+}
+.header .top .top-1-right a + a {
+  border-left: 1px solid #3c3c3c;
+  padding-left: 5px;
+}
+.header .headerlogo {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.header .headerlogo .logo img {
+  width: 175px;
+  height: 56px;
+  display: block;
+  margin: 25px 45px;
+}
+.header .headerlogo .input-search {
+  margin-top: 35px;
+  display: flex;
+}
+.header .headerlogo .input-search input {
+  box-sizing: border-box;
+  width: 490px;
+  height: 32px;
+  padding: 0 4px;
+  border: 2px solid #ea4a36;
+  outline: none;
+}
+.header .headerlogo .input-search button {
+  width: 68px;
+  height: 32px;
+  background-color: #ea4a36;
+  color: #fff;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.nav-box {
+  width: 100%;
+  border-bottom: 2px solid #e1251b;
+}
+.Nav {
+  width: 1200px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+.Nav h3 {
+  width: 210px;
+  height: 50px;
+  line-height: 50px;
+  color: #fff;
+  background-color: #e1251b;
+  font-weight: bold;
+  text-align: center;
+}
+.Nav nav a {
+  font-size: 16px;
+  color: #333;
+  margin: 0 22px;
+}
+.Phone {
+  width: 1200px;
+  margin: 15px auto 0;
+}
+.Phone .PhoneClass {
+  padding: 9px 15px 9px 0;
+  color: #666;
+}
+.Phone .PhoneClass a {
+  margin-right: 10px;
+}
+.Phone .PhoneClass a + a::before {
+  content: "/";
+  margin-right: 10px;
+}
+.Phone .Phone-Context {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0 15px;
+}
+.Phone-Context-1 {
+  width: 402px;
+}
+.Phone-Context-1 .scaleBig {
+  width: 400px;
+  border: 1px solid #333;
+  position: relative;
+}
+.Phone-Context-1 .scaleBig .SPic {
+  width: 400px;
+  position: relative;
+}
+.Phone-Context-1 .scaleBig .SPic img {
+  width: 400px;
+  height: 400px;
+}
+.Phone-Context-1 .scaleBig .SPic .dragFrame {
+  width: 200px;
+  height: 200px;
+  background-color: rgba(24, 255, 255, 0.5);
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+}
+.Phone-Context-1 .scaleBig .LPic {
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+  display: none;
+  position: absolute;
+  left: 420px;
+  top: 0;
+  border: 1px solid #ccc;
+  z-index: 2;
+}
+.Phone-Context-1 .scaleBig .LPic img {
+  width: 800px;
+  height: 800px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.Phone-Context-1 .under-scroll {
+  margin: 5px 0 0 0;
+  width: 400px;
+  display: flex;
+}
+.Phone-Context-1 .under-scroll .under-scroll-left,
+.Phone-Context-1 .under-scroll .under-scroll-right {
+  width: 10px;
+  height: 54px;
+  line-height: 54px;
+  background-color: #EBEBEB;
+  border: 1px solid #ccc;
+}
+.Phone-Context-1 .under-scroll .imgLists-box {
+  width: 372px;
+  height: 56px;
+  overflow: hidden;
+}
+.Phone-Context-1 .under-scroll .imgLists-box .imgLists {
+  width: 5000px;
+  display: flex;
+  transition: all 1s;
+}
+.Phone-Context-1 .under-scroll .imgLists-box .imgLists li {
+  padding: 2px;
+}
+.Phone-Context-1 .under-scroll .imgLists-box .imgLists li img {
+  width: 50px;
+  height: 50px;
+  display: block;
+  border: 1px solid #ccc;
+  margin-right: 12px;
+  margin-left: 8px;
+}
+.Phone-Context-2 {
+  width: 700px;
+}
+.Phone-Context-2 .phone-detailed-information .title {
+  font-size: 14px;
+  line-height: 21px;
+  margin-top: 15px;
+}
+.Phone-Context-2 .phone-detailed-information .under-title {
+  color: #e12228;
+  margin-top: 15px;
+}
+.Phone-Context-2 .price {
+  line-height: 28px;
+  background-color: #fee9ec;
+  margin-top: 10px;
+  padding: 7px;
+}
+.Phone-Context-2 .price .price-detail {
+  display: flex;
+}
+.Phone-Context-2 .price .price-detail p:nth-child(1) {
+  margin-right: 10px;
+}
+.Phone-Context-2 .price .price-detail p:nth-child(2) {
+  color: #cc1122;
+}
+.Phone-Context-2 .price .price-detail p:nth-child(2) span {
+  font-size: 24px;
+}
+.Phone-Context-2 .price .combo {
+  display: flex;
+  width: 520px;
+}
+.Phone-Context-2 .price .combo p:nth-child(1) {
+  margin-right: 10px;
+}
+.Phone-Context-2 .price .combo p:nth-child(2) span {
+  background-color: #c81623;
+  padding: 4px;
+  color: #fff;
+}
+.Phone-Context-2 .support {
+  border-bottom: 1px solid #ededed;
+  padding-bottom: 5px;
+}
+.Phone-Context-2 .support .support-detail {
+  display: flex;
+  margin-top: 10px;
+}
+.Phone-Context-2 .support .support-detail p:nth-child(1) {
+  margin-right: 10px;
+}
+.Phone-Context-2 .support .address {
+  display: flex;
+  margin-top: 10px;
+}
+.Phone-Context-2 .support .address p:nth-child(1) {
+  margin-right: 10px;
+}
+.Phone-Context-2 .ProductChooseInsert {
+  margin: 10px 0;
+  display: flex;
+}
+.Phone-Context-2 .ProductChooseInsert mark {
+  height: 30px;
+  line-height: 30px;
+  padding: 0 5px;
+  display: block;
+  margin: 0 10px;
+}
+.Phone-Context-2 .ProductChooseInsert mark a {
+  margin-left: 10px;
+  color: red;
+  cursor: pointer;
+}
+.Phone-Context-2 .product-choose {
+  margin-top: 12px;
+  line-height: 28px;
+}
+.Phone-Context-2 .product-choose dl {
+  margin-bottom: 12px;
+  display: flex;
+}
+.Phone-Context-2 .product-choose dl dt {
+  margin-right: 20px;
+}
+.Phone-Context-2 .product-choose dl dd {
+  line-height: 24px;
+  color: #666;
+  border: 1px solid #eee;
+  padding: 1px 14px;
+  margin-right: 8px;
+}
+.Phone-Context-2 .product-choose dl dd:nth-of-type(1) {
+  color: #f30a0a;
+}
+.Phone-Context-2 .product-number {
+  display: flex;
+}
+.Phone-Context-2 .product-number .num {
+  width: 56px;
+  margin-right: 15px;
+  position: relative;
+}
+.Phone-Context-2 .product-number .num input {
+  width: 38px;
+  height: 37px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+.Phone-Context-2 .product-number .num button {
+  width: 19px;
+  height: 19px;
+  line-height: 19px;
+  background-color: #f1f1f1;
+  color: #666;
+  text-align: center;
+  border: 1px solid #ddd;
+  position: absolute;
+  outline: none;
+}
+.Phone-Context-2 .product-number .num .add {
+  top: 0;
+  right: 0;
+}
+.Phone-Context-2 .product-number .num .sub {
+  top: 19px;
+  right: 0;
+}
+.Phone-Context-2 .product-number .add-shopping-car {
+  height: 36px;
+  line-height: 36px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #e1251b;
+  margin: 0 0 0 80px;
+  padding: 0 10px;
+}
+.productContent {
+  width: 1200px;
+  margin: 30px auto 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.productContent .productContentLeft {
+  width: 210px;
+  border: 1px solid #ccc;
+}
+.productContent .productContentLeft .tabTitle {
+  display: flex;
+}
+.productContent .productContentLeft .tabTitle h4 {
+  width: 50%;
+  text-align: center;
+  height: 36px;
+  line-height: 36px;
+  border-top: 4px solid #fff;
+  border-bottom: 1px solid #ccc;
+}
+.productContent .productContentLeft .tabTitle h4.active {
+  border-top: 4px solid #e1251b;
+  border-bottom: none;
+}
+.productContent .productContentLeft .tabContent {
+  padding: 10px;
+}
+.productContent .productContentLeft .tabContent .tabDetailChoose {
+  display: none;
+}
+.productContent .productContentLeft .tabContent .tabDetailChoose.active {
+  display: block;
+}
+.productContent .productContentLeft .tabContent .tabDetailChoose:nth-child(1) .partList {
+  display: flex;
+  flex-wrap: wrap;
+}
+.productContent .productContentLeft .tabContent .tabDetailChoose:nth-child(1) .partList li {
+  width: 50%;
+  height: 28px;
+  border-bottom: 1px dashed #ccc;
+  line-height: 28px;
+}
+.productContent .productContentLeft .tabContent .tabDetailChoose:nth-child(1) .productList li .productlImg {
+  text-align: center;
+}
+.productContent .productContentLeft .tabContent .tabDetailChoose:nth-child(1) .productList li p {
+  font-size: 18px;
+  color: #ea4a36;
+}
+.productContent .productContentLeft .tabContent .tabDetailChoose:nth-child(1) .productList li .addShoppingCar {
+  text-align: center;
+}
+.productContent .productContentLeft .tabContent .tabDetailChoose:nth-child(1) .productList li .addShoppingCar a {
+  display: inline-block;
+  width: 90px;
+  height: 30px;
+  color: #666;
+  border: 1px solid #ccc;
+  text-align: center;
+  line-height: 30px;
+}
+.productContent .productContentLeft .tabContent .tabDetailChoose:nth-child(2) .partList {
+  display: flex;
+  flex-wrap: wrap;
+}
+.productContent .productContentLeft .tabContent .tabDetailChoose:nth-child(2) .partList li {
+  width: 50%;
+  height: 28px;
+  border-bottom: 1px dashed #ccc;
+  line-height: 28px;
+}
+.productContent .productContentLeft .tabContent .tabDetailChoose:nth-child(2) .productList li .productlImg {
+  text-align: center;
+}
+.productContent .productContentLeft .tabContent .tabDetailChoose:nth-child(2) .productList li p {
+  font-size: 18px;
+  color: #ea4a36;
+}
+.productContent .productContentLeft .tabContent .tabDetailChoose:nth-child(2) .productList li .addShoppingCar {
+  text-align: center;
+}
+.productContent .productContentLeft .tabContent .tabDetailChoose:nth-child(2) .productList li .addShoppingCar a {
+  display: inline-block;
+  width: 90px;
+  height: 30px;
+  color: #666;
+  border: 1px solid #ccc;
+  text-align: center;
+  line-height: 30px;
+}
+.productContent .detail {
+  width: 980px;
+}
+.productContent .detail .chooseBox {
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+}
+.productContent .detail .chooseBox .match {
+  border-bottom: 1px solid #ddd;
+  background-color: #f1f1f1;
+  color: #333;
+  padding: 5px 0 5px 15px;
+}
+.productContent .detail .chooseBox .productMatch {
+  height: 170px;
+  padding-top: 10px;
+}
+.productContent .detail .chooseBox .productMatch .choosePhone {
+  width: 127px;
+  height: 165px;
+  text-align: center;
+  position: relative;
+  float: left;
+}
+.productContent .detail .chooseBox .productMatch .choosePhone img {
+  width: 87px;
+}
+.productContent .detail .chooseBox .productMatch .choosePhone p {
+  color: #c81623;
+  font-size: 16px;
+  font-weight: bold;
+}
+.productContent .detail .chooseBox .productMatch .choosePhone i {
+  position: absolute;
+  top: 48px;
+  right: -25px;
+  font-size: 16px;
+}
+.productContent .detail .chooseBox .productMatch .matchs {
+  width: 668px;
+  height: 165px;
+  float: left;
+}
+.productContent .detail .chooseBox .productMatch .matchs .matchsItem {
+  float: left;
+  width: 127px;
+  padding: 0 20px;
+  text-align: center;
+}
+.productContent .detail .chooseBox .productMatch .matchs .matchsItem img {
+  width: 120px;
+  height: 130px;
+}
+.productContent .detail .chooseBox .productMatch .matchs .matchsItem p {
+  font-size: 12px;
+}
+.productContent .detail .chooseBox .productMatch .matchs .matchsItem label {
+  display: block;
+}
+.productContent .detail .chooseBox .productMatch .matchs .matchsItem label input {
+  vertical-align: middle;
+}
+.productContent .detail .chooseBox .productMatch .matchs .matchsItem label span {
+  vertical-align: middle;
+}
+.productContent .detail .chooseBox .productMatch .chooseResult {
+  width: 153px;
+  height: 165px;
+  border-left: 1px solid #ddd;
+  margin-left: 10px;
+  padding-left: 10px;
+  float: left;
+}
+.productContent .detail .chooseBox .productMatch .chooseResult .num {
+  margin: 10px 0;
+}
+.productContent .detail .chooseBox .productMatch .chooseResult .priceTitle {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.productContent .detail .chooseBox .productMatch .chooseResult .price {
+  color: #B1191A;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.productContent .detail .chooseBox .productMatch .chooseResult .addShopcar {
+  padding: 10px 25px;
+  background-color: #e1251b;
+  font-size: 16px;
+  color: #fff;
+  border: none;
+}
+.productContent .detail .productIntroduceBox .tabProductIntroduce {
+  background-color: #ededed;
+  overflow: hidden;
+}
+.productContent .detail .productIntroduceBox .tabProductIntroduce li {
+  float: left;
+}
+.productContent .detail .productIntroduceBox .tabProductIntroduce li + li > a {
+  border-left: 1px solid #ddd;
+}
+.productContent .detail .productIntroduceBox .tabProductIntroduce li.active a {
+  background-color: #ea4a36;
+  color: #fff;
+}
+.productContent .detail .productIntroduceBox .tabProductIntroduce li a {
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 11px;
+  text-align: center;
+  color: #666;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+.productContent .detail .productIntroduceBox .tabProductDetail .tabDetailChoose {
+  display: none;
+}
+.productContent .detail .productIntroduceBox .tabProductDetail .tabDetailChoose.active {
+  display: block;
+}
+.productContent .detail .productIntroduceBox .tabProductDetail #one .goods-intro {
+  padding-left: 10px;
+}
+.productContent .detail .productIntroduceBox .tabProductDetail #one .goods-intro li {
+  margin: 10px 0;
+}
+.productContent .detail .productIntroduceBox .tabProductDetail #one .imgDetailShow img {
+  width: 100%;
+}
+.asideFrame {
+  height: 100%;
+  width: 300px;
+  background-color: #7a6e6e;
+  position: fixed;
+  top: 0;
+  right: -294px;
+  transition: all 0.5s linear;
+}
+.asideFrame .content {
+  width: 294px;
+  height: 100%;
+  position: relative;
+  right: -6px;
+  background-color: bisque;
+  z-index: 3;
+}
+.asideFrame .asideCon {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: -29px;
+  top: 0px;
+  background: #7a6e6e url(../image/list.png) center no-repeat;
+  background-size: contain;
+}
+.asideFrame .asideConList {
+  width: 35px;
+  position: absolute;
+  z-index: 2;
+  left: -29px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.asideFrame .asideConList li {
+  width: 35px;
+  height: 35px;
+  margin: 3px 0px;
+  position: relative;
+}
+.asideFrame .asideConList li:hover p {
+  left: -62px;
+}
+.asideFrame .asideConList li i {
+  display: block;
+  width: 35px;
+  height: 35px;
+  z-index: 3;
+  position: relative;
+}
+.asideFrame .asideConList li p {
+  width: 62px;
+  height: 35px;
+  left: 35px;
+  top: 0;
+  position: absolute;
+  background-color: red;
+  line-height: 35px;
+  color: #fff;
+  text-align: center;
+  transition: all 0.3s linear 0.2s;
+  z-index: 1;
+}
+.asideFrame .asideConList li:nth-child(1) i {
+  background: #7a6e6e url("../image/toolbars.png") -87px -174px no-repeat;
+}
+.asideFrame .asideConList li:nth-child(2) i {
+  background: #7a6e6e url("../image/toolbars.png") -50px 0 no-repeat;
+}
+.asideFrame .asideConList li:nth-child(3) i {
+  background: #7a6e6e url("../image/toolbars.png") -50px -100px no-repeat;
+}
+.asideFrame .asideConList li:nth-child(4) i {
+  background: #7a6e6e url("../image/toolbars.png") -190px -150px no-repeat;
+}
+.asideFrame .asideConList li:nth-child(5) i {
+  background: #7a6e6e url("../image/toolbars.png") -50px -150px no-repeat;
+}
+.asideFrame .asideConList li:nth-child(6) i {
+  background: #7a6e6e url("../image/toolbars.png") -50px -250px no-repeat;
+}
+.asideFrame .backTop {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: -29px;
+  bottom: 0px;
+  background: #7a6e6e url("../image/toolbars.png") -50px -150px no-repeat;
+  background-size: contain;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!--说出获取元素所有的方式
+    - 通过标签名获取： + 代码
+    - 通过id获取： + 代码
+    - 通过类名获取： + 代码
+    - selectors API + 代码 -->
+    <div id="box">
+        <p>111</p>
+        <p>222</p>
+        <p>333</p>
+        <p>444</p>
+    </div>
+    <div id="ppp">
+        <p id="p555">555</p>
+        <p class="p666">666</p>
+        <p class="p666">666</p>
+        <p class="p666">666</p>
+    </div>
+    <div id="pppp">
+        <p class="p777">777</p>
+        <p class="p777">777</p>
+        <p class="p888">888</p>
+        <p>999</p>
+    </div>
+
+    <script>
+        //- 通过标签名获取： + 代码
+/*         var tBox = document.getElementById('box');
+        var tps = tBox.getElementsByTagName('p');
+        console.log(tps);
+        for (var i = 0; i < tps.length; i++) {
+            tps[i].style.backgroundColor = "red";
+        } */
+
+        //- 通过id获取： + 代码
+/*         var tp555 = document.getElementById('p555');
+        console.log(tp555);
+        tp555.style.color = "yellow";
+ */
+        //- 通过类名获取： + 代码
+        var tp666 = document.getElementsByClassName('p666');
+        console.log(tp666);
+
+        Array.prototype.forEach.call(tp666, function (item, index) {
+            item.style.backgroundColor = "blue";
+        })
+
+        //- selectors API + 代码 -->
+/*         var allP = document.querySelectorAll('#pppp p')
+        console.log(allP);
+        allP.forEach(function (item) {
+            item.style.background = "pink";
+        })
+        var allP1 = document.querySelectorAll('#pppp .p777');
+        console.log(allP1);
+        var Div = document.querySelector('#pppp');
+        console.log(Div); */
+        </script>
+</body>
+</html>

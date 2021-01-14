@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <div class="box1">
+            <p class="p1">111</p>
+            <span class="span1">222</span>
+        </div>
+        <div class="box2">
+            <p class="p2">333</p>
+        </div>
+    </div>
+    <script src="./jquery.js"></script>
+    <script>
+        //parent() ,返回原始包装集所有元素的唯一直接父元素的新包装集；
+        //如果指定了参数，那么该参数也是筛选表达式
+        //$(".span1").parent().get(0).style.color = "red";
+        //var tSpan1 = document.querySelector('.span1')
+        //$(tSpan1.parentNode).css("color","yellow")
+
+        //siblings() ：返回原始包装集元素中的所有兄弟元素所组成的新包装集；
+        //$(".box1").siblings().get(0).style.color = "hotpink"
+        //var tBox1 = document.querySelector('.box1');
+        //var tBox2 = document.querySelector('.box2');
+        //$(tBox1.nextElementSibling).css("color","yellow");
+        // console.log((tBox1.nextElementSibling));
+
+        //find(String) ：返回原始包装集里与传入的选择器表达式相匹配的所有元素的新包装集并且原始包装集中的元素的后代也会被传入新的包装集
+        //对于类数组的常用方法还有很多，比如 prev()、 end()、 next()等等
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .recommendation{
+            margin: 0 auto;
+            padding: 0;
+            width: 1200px;
+            height: 165px;
+            border:1px solid yellow;
+            list-style: none;
+        }
+        .day1{
+            width: 16.67%;
+            height: 100%;
+            background-color: #5c5251;
+            color: #fff;
+            font-size: 18px;
+            text-align: center;
+            float: left;
+        }
+        .recommendation li img{
+            float: left;
+        }
+        .recommendation .day1 li a img{
+            float: right;
+        }
+        .recommendation .day1 a{
+            display: block;
+            text-decoration: none;
+            position: relative;
+        }
+        .recommendation .day1 a img{
+            position: absolute;
+            right: 70px;
+            top: 35px;
+
+        }
+        .day1 a h3{
+            display: block;
+            color: #fff;
+            position: absolute;
+            top: 80px;
+            left: 66px;
+            font-size: 18px;
+        }
+
+    </style>
+</head>
+<body>
+    <ul class="recommendation">
+        <li class="day1">
+            <a href="#"><img src="./img/clock.png">
+                <h3>今日推荐</h3>
+            </a>
+        </li>
+        <li><a href="#"><img src="./img/today01.png"></a></li>
+        <li><a href="#"><img src="./img/today02.png" ></a></li>
+        <li><a href="#"><img src="./img/today03.png"></a></li>
+        <li><a href="#"><img src="./img/today04.png"></a></li>
+    </ul>
+</body>
+</html>

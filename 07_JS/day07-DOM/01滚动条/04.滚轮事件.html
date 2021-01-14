@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 250px;
+            height: 250px;
+            background-color:chartreuse;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+        var tBox = document.getElementById('box');
+        var i = 250;
+        tBox.onmousewheel = fn;
+
+        tBox.addEventListener("DOMMouseScroll", fn)
+        function fn(e) {
+                //谷歌的onmousewheel事件
+            if (e.wheelDelta) {
+                if (e.wheelDelta > 0) {
+                    i += 10;
+                } else {
+                    i -= 10;
+                }
+            } else {
+                //火狐的DOMMouseScroll事件
+                if (e.detail > 0) {
+                    i -= 10;
+                } else {
+                    i += 10;
+                }
+            }
+
+            tBox.style.height = i + "px";
+            tBox.style.width = i + "px";
+        }
+        
+    </script>
+</body>
+</html>

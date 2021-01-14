@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function createPerson(name,age,sex,hobby,character){
+    var o = new Object();
+    o.name = name;
+    o.age = age;
+    o.sex = sex;
+    o.hobby =hobby;
+    o.character= character;
+    return o;
+}
+
+var liPeiHua = createPerson('哗哗',998,'女',['男人']);
+console.log(liPeiHua);
+var yanHaiJing = createPerson('闫海静',18,'男',['女','养鱼'],'温顺');
+console.log(yanHaiJing);
+    </script>
+</body>
+</html>

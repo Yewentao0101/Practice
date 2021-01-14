@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>单选框练习</title>
+    <style>
+        html,body{
+            margin: 0px;
+            padding: 0px;
+        }
+        #radio{
+                width:500px;
+                margin:200px auto;
+                padding:0;
+                list-style-type:none;
+                border:1px solid transparent;
+        } 
+        #radio input[type="radio"][name="say"]{
+                display:none;
+        }
+        #radio input[type="radio"][name="say"] + label{
+                display:block;
+                /* border:1px solid red; */
+                width:400px;
+                height:40px;
+                line-height:40px;
+                font-size:16px;
+                margin-top:10px;
+        }
+        #radio input[type="radio"][name="say"] + label::before{
+                float:left;
+                content:'';
+                border:1px solid #de8650;
+                width:40px;
+                height:40px;
+                margin-right:15px;
+        }
+        #radio input[type="radio"][name="say"]:checked + label::before{
+                content:'✔';
+                text-align: center;
+                background-color: #de8650;
+                color:#FFF;
+        }
+        #radio input[type="radio"][name="say"][id="say4"]:checked + label::after{
+                content:'干得漂亮！';
+                color:red;
+                height:40px;
+                font-size:19px;
+                margin-left:15px;
+            }
+    </style>
+</head>
+<body>
+    <ul id="radio">
+        <li>
+            <input type="radio" name="say" id="say1"/>
+            <label for="say1">静哥真帅！</label>
+        </li>
+        <li>
+            <input type="radio" name="say" id="say2"/>
+            <label for="say2">静哥真英俊！</label>
+        </li>
+        <li>
+            <input type="radio" name="say" id="say3"/>
+            <label for="say3">静哥又帅又英俊！</label>
+        </li>
+        <li>
+            <input type="radio" name="say" id="say4"/>
+            <label for="say4">闫海静真丑！</label>
+        </li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="ipt">
+    <div id="box">666</div>
+    <script>
+        
+        var tIpt = document.getElementById('ipt');
+        var tBox = document.getElementById('box');
+
+        tIpt.onkeyup = function () {
+            console.log("键盘抬起")
+        }
+
+        tIpt.onkeydown = function () {
+            console.log("键盘按下")
+        }
+
+        var num = 0;
+        document.onkeydown = function () {
+            num++;
+            tBox.style.marginLeft = num + "px";
+        }
+    </script>
+</body>
+</html>

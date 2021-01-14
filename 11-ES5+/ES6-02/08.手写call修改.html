@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        Function.prototype.myCall = function(context){
+            var type = typeof context;
+            if(context === null|| context===undefined){
+                context = window;
+            }
+            switch(type){
+                case "number":
+                context = new Number(context);
+                break;
+            }
+            switch(type){
+                case "string":
+                context = new String(context);
+                break;
+            }
+            switch(type){
+                case "boolean":
+                context = new Boolean(context);
+                break;
+            }
+            var arg = Array.from(arguments).slice(1);
+            var key = Date.now().toString(36);
+            context[key]=this;
+            var result = context[key](...arg) ;
+            delete context[key];
+            return result;
+        }
+    </script>
+</body>
+</html>

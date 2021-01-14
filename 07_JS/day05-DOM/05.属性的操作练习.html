@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        li {
+            background-color: turquoise;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn">变红</button>
+    <ul class="box">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script>
+        var tBox = document.querySelector('.box');
+        var tLis = document.querySelectorAll('.box li');
+        var oBtn = document.getElementById('btn');
+
+
+
+        tLis.forEach(function (item, index) {
+            item.onclick = function () {
+                item.setAttribute("click", "true");
+            }
+        })
+
+        tBtn.onclick = function () {
+            tLis.forEach(function (item, index) {
+                if (item.getAttribute("click")) {
+                    item.style.background = "red";
+                    item.removeAttribute("click");
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 上月剩余天数
+        var first=7;
+        // 本月总共天数
+        var days=31;
+        document.write('<table border="1" width="800"><tr>');
+        var i=1;
+        var count=1;
+        while(i<=42){
+            document.write('<td>&nbsp;</td>');
+            if (i>first && i<=(days + first)){
+                doument.write('<td>'+count+'</td>');
+            }else{
+                document.write('<td>&nbsp;</td>');
+            }
+            if(i===42){
+                document.write('</tr>');
+            }else if(i % 7===0){
+                document.write('<tr></tr>');
+            }
+            i++;
+        }
+        document.write('</table>');
+
+    </script>
+</body>
+</html>

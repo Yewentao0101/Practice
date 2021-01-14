@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <style>
+            #menu{
+                margin:0;
+                padding:0;
+                list-style-type: none;
+                width:210px;
+
+                background-color:rgb(250, 250, 250);
+                /* border-color:yellow; */
+                /* border-style:solid; */
+
+                position:relative;
+            }
+
+            #menu li{
+                /* border:1px solid green; */
+                height:30px;
+                line-height:30px;
+                font-size:14px;
+                padding-left: 10px;
+            }
+            #menu li a{
+                color:#333;
+                text-decoration: none;
+            }
+            #menu li a:hover{
+                color:red;
+            }
+
+            #menu div.menu-content{
+                display:none;
+
+                border:1px solid #333;
+                background-color:yellow;
+                position: absolute;
+                width:500px;
+                top:0;
+                bottom:0;
+                left:210px;
+            }
+            #menu li:hover div.menu-content{
+                display:block;
+            }
+        </style>
+    </head>
+    <body>
+        <ul id="menu">
+            <li>
+                <a href="#">家用电器</a>
+                <div class="menu-content">1</div>
+            </li>
+            <li>
+                <a href="#">手机 / 运营商 / 数码</a>
+                <div class="menu-content">2</div>
+            </li>
+            <li>
+                <a href="#">电脑 / 办公</a>
+                <div class="menu-content">3</div>
+            </li>
+            <li>
+                <a href="#">随便用品</a>
+                <div class="menu-content">4</div>
+            </li>
+        </ul>
+    </body>
+</html>

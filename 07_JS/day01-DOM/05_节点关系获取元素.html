@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="box">
+        <li>1</li>
+        <li>2</li>
+        <!-- <li>注释</li> -->
+        <li>3</li>
+    </ul>
+    <script>
+        var tBox = document.getElementById('box');
+        var tLis = tBox.getElementsByTagName("li")
+
+        console.log(tLis[0].parentNode)
+        console.log(tBox.children);
+
+        //封装一个函数，获取第一个子元素节点的函数
+        function getFirstChild(obj) {
+
+            return obj.firstElementChild ? obj.firstElementChild : obj.firstChild;
+        }
+
+        var res = getFirstChild(tBox);
+        console.log(res.nodeName);
+
+
+        //获取最后一个子元素节点封装
+        function getLastChild(obj) {
+            return obj.lastElementChild ? obj.lastElementChild : obj.lastChild;
+        }
+
+        var res = getLastChild(tBox);
+        console.log(res);
+
+
+        //获取下一个兄弟元素节点
+        function getNextSilbling(obj) {
+            return obj.nextElementSibling ? obj.nextElementSibling : obj.nextSibling;
+        }
+
+        var res = getNextSilbling(tLis[1]);
+        console.log(res);
+
+
+        //获取上一个兄弟元素节点
+        function getPreviousSilbling(obj) {
+            return obj.previousElementSibling ? obj.previousElementSibling : obj.previousSibling;
+        }
+
+        var res = getPreviousSilbling(tLis[1]);
+        console.log(res);
+    </script>
+</body>
+</html>

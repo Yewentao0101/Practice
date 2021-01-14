@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function myInstanceof (A,B){
+            var BPro = B.prototype;
+            var startA = A.__proto__;
+            while(startA){
+                if(startA===BPro){
+                    return true;
+                }
+                startA = startA.__proto__;
+            }
+        }
+
+        function Foo(){};
+        var foo= new Foo();
+
+        console.log(myInstanceof(Foo,foo,))
+        console.log(myInstanceof(foo, Foo))
+        console.log(myInstanceof(foo, Object))
+        console.log(myInstanceof(Object, Function))
+        console.log(myInstanceof(Object, Object))
+        console.log(myInstanceof(Function, Object))
+        console.log(myInstanceof(Function, Function))
+        console.log(myInstanceof(Object, Foo))
+    </script>
+</body>
+</html>

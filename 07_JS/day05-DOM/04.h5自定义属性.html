@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box" data-love="girls"></div>
+    <script>
+        var tBox = document.querySelector('.box');
+
+        document.onclick = function () {
+            console.log(tBox.dataset.love)
+
+
+            tBox.dataset.love = "girls";
+
+
+            delete tBox.dataset.xxx;
+        }
+    </script>
+</body>
+
+</html>

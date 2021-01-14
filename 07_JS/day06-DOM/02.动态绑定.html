@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="button">事件取消</button>
+    <div id="outer">
+        <div id="inner">
+            <div id="con">content</div>
+        </div>
+    </div>
+
+    <script>
+        var tBtn = document.getElementById('button');
+        var tOuter = document.getElementById('outer');
+        var tInner = document.getElementById('inner');
+        var tCon = document.getElementById('con');
+
+        // tCon.onclick = function () {
+        //     alert("con1")
+        // }
+        // tCon.onclick = function () {
+        //     alert("con2")
+        // }
+        // tCon.onclick = function () {
+        //     alert("con3")
+        // } 同一个事件对用一个元素只能绑定1次，否则会覆盖
+
+
+        // tInner.onclick = function () {
+        //      alert("inner")
+        //  }
+        // tOuter.onclick = function () {
+        //      alert("outer")
+        //  } 
+        // tCon.onclick = function () {
+        //      alert("con")
+        //  }
+        // con inner outer  只能执行冒泡
+ 
+        tCon.onclick = function () {
+            alert("con")
+        }
+
+        tBtn.onclick = function () {
+            tCon.onclick = null;
+        }
+    </script>
+</body>
+</html>

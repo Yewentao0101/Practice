@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .con{
+            width: 500px;
+            border: 1px solid lightcoral;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn1">隐藏</button>
+    <button class="btn2">显示</button>
+    <button class="btn3">切换</button>
+    <div class="con">年轻人不讲武德，耗子尾汁，我大意了，没有闪年轻人不讲武德，耗子尾汁，我大意了，没有闪年轻人不讲武德，耗子尾汁，我大意了，没有闪年轻人不讲武德，耗子尾汁，我大意了，没有闪年轻人不讲武德，耗子尾汁，我大意了，没有闪年轻人不讲武德，耗子尾汁，我大意了，没有闪年轻人不讲武德，耗子尾汁，我大意了，没有闪年轻人不讲武德，耗子尾汁，我大意了，没有闪年轻人不讲武德，耗子尾汁，我大意了，没有闪年轻人不讲武德，耗子尾汁，我大意了，没有闪年轻人不讲武德，耗子尾汁，我大意了，没有闪年轻人不讲武德，耗子尾汁，我大意了，没有闪年轻人不讲武德，耗子尾汁，我大意了，没有闪。
+    </div>
+    <script src="./jquery.js"></script>
+    <script>
+        $(function(){
+            /*$(".btn1").click(function(){
+            $(".con").show('fast',"linear",function(){
+                alert('欺负我年龄大？')
+            })
+            })
+            $(".btn2").click(function(){
+                $(".con").hide(2000);
+            }) 
+            $(".btn3").click(function(){
+                $(".con").toggle(2000);
+            })
+            */
+            $(".btn1").click(function(){
+                $(".con").slideUp('fast',"linear",function(){
+                    alert('欺负我年龄大？')
+                })
+            })
+            $(".btn2").click(function(){
+                $(".con").slideDown(2000);
+            })
+            $(".btn3").click(function(){
+                $(".con").slideToggle(2000);
+            })
+
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .scrollBar {
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: 30px;
+            background-color: rgb(0, 192, 192);
+            height: 100%;
+        }
+
+        .scrollBar .box {
+            position: absolute;
+            top: 0;
+            width: 30px;
+            /* height: 60px; */
+            background-color: rgb(135, 235, 173);
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="con"></div>
+        <div class="scrollBar">
+            <div class="box"></div>
+        </div>
+    </div>
+
+    <script>
+        var tCon = document.querySelector('.con');
+        var tBox = document.querySelector('.box');
+        var tScrollBar = document.querySelector('.scrollBar');
+        for (var i = 0; i < 300; i++) {
+            tCon.innerHTML += i + "<br>"
+        }
+
+        var scale = tCon.offsetHeight / tScrollBar.offsetHeight;
+        //比例就是：(文档的总高度 / 滑槽的总高度)
+        var tBoxHeight = document.documentElement.clientHeight / scale;
+        // 滑块的高度y = 窗口的高度x / (文档的总高度 / 滑槽的总高度)
+        tBox.style.height = tBoxHeight + "px";
+        // console.log(tBox.style.height)
+
+        tBox.onmousedown = function(e){
+            e.preventDefault();
+            var mouseToBox = e.offsetY;
+            document.onmousemove = function(e){
+                e.preventDefault();
+                var boxLocation = e.clientY - mouseToBox;
+                if(boxLocation <= 0){
+                    boxLocation = 0;
+                }else if(boxLocation >= tScrollBar.clientHeight - tBox.offsetHeight){
+                    boxLocation = tScrollBar.clientHeight - tBox.offsetHeight
+                }
+                tBox.style.top = boxLocation + "px";
+                var docMove = boxLocation * scale;
+                tCon.style.transform = "translateY(" + -docMove + "px)"
+            }
+            document.onmouseup = function () {
+                document.onmousemove = null;
+                document.onmouseup = null;
+            }
+        }
+    </script>
+</body>
+</html>

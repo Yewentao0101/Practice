@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .hhh{
+           width: 500px;
+           height: 500px;
+           border: 1px solid black;
+           border-radius: 50%;
+           box-shadow: -30px -20px 20px inset;
+           /* position: relative; */
+           margin: 100px auto;
+           position:relative;
+           background-color: #ffffff;
+       }
+       .hhh::after{
+           position:absolute;
+           top: 400px;
+           left: 180px;
+           content:'';
+           height: 100px;
+           width: 400px;
+           border: 1px solid black;
+           border-radius: 50%;
+           background-color: rgba(159, 189, 181, 0.849);
+           z-index: -1;
+
+           
+
+       }
+    </style>
+</head>
+<body>
+    <div class="hhh"></div>
+</body>
+</html>

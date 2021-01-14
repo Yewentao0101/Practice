@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="textField">
+        <textarea id="text"></textarea>
+        <p>不得少于<span id="count">200</span>字</p>
+    </div>
+    <script>
+        var tText = document.getElementById("text");
+        var tCount = document.getElementById("count");
+
+        tText.onkeyup = function(){
+            var textLength = tText.value.length;
+            var remainingWords = 200 - textLength;
+
+            // if (remainingWords < 0) {
+            //     tText.style.color = "red";
+            // } else {
+            //     tCount.style.color = "#000";
+            // } 
+            if (remainingWords < 0) {
+                tText.value = tText.value.substr(0, 200)
+            }
+
+            tCount.textContent = remainingWords;
+
+        }
+    </script>
+</body>
+</html>

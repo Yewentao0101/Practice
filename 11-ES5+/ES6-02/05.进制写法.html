@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //二进制: 0b开头
+        //八进制：0o开头（旧版本是0开头）
+        //十六进制：0x开头
+        //parseInt(a,b);把b进制的a转换成10进制
+        //a.toString(b);把a转成b进制
+
+
+        //把任意10进制数字转换为n进制(n进制为2-36)
+        function decimalismBy(num, n) {
+            //声明一个数组 用来保存取余的余数
+            const arr = [];
+            //遍历 num只要不为0 则一直计算
+            while (num > 0) {
+                //remainder 保存余数
+                let remainder = num % n;
+                //计算一次余数之后  修改num的值 为除2得到的值
+                num = parseInt(num / n);
+                arr.unshift(remainder.toString(n));
+            }
+            //当退出while的时候 ，则说明计算完成
+            //console.log(arr);
+            return arr.join("");
+        }
+        console.log(decimalismBy(6666, 36))
+    </script>
+</body>
+
+</html>

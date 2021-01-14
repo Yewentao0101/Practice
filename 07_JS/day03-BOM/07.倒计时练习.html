@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="tit">敌军还有10秒到达战场</h1>
+    <script>
+        var tTit = document.querySelector('.tit');
+        var time = 10 ;
+        
+        var timer = setInterval(function(){
+            time--;
+            if(time>0){
+                tTit.textContent = '敌军还有' + time + '秒到达战场';
+                return;
+            }
+            clearInterval(timer);
+            tTit.textContent = "全军出击";
+        },1000) 
+    </script>
+</body>
+</html>

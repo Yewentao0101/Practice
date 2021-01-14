@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+                body {
+            height: 3000px;
+        }
+
+        #box {
+            width: 400px;
+            height: 300px;
+            background-color: pink;
+            overflow: hidden;
+        }
+
+        #con {
+            width: 100px;
+            height: 100px;
+            background-color: lawngreen;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="con"></div>
+    </div>
+    <script>
+        var tBox = document.getElementById('box');
+
+        tBox.onclick = function(e){
+            var e = e;
+            console.log(e.clientY);//clientY:事件发生位置到浏览器视口边缘的距离
+            console.log(e.offsetY);///offsetY:事件发生位置到目标元素边缘的距离
+            console.log(e.pageY);//pageY: 事件发生位置到文档边缘的距离
+            console.log(e.screenY);//screenY：事件发生位置到电脑屏幕边缘的距离
+        }
+
+            
+            
+            
+    </script>
+</body>
+</html>

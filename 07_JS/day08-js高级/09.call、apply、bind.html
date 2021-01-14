@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj = {
+            name : "xxx"
+        }
+
+        function sum(a,b){
+            console.log(this);
+            console.log(a + b);
+        }
+        sum(1,7)   //window   8
+
+        sum.call(1) //Number{1}
+        sum.call(true) //Boolean{true}
+        sum.call("xxxxxxx") //String{xxxxxxx}
+        sum.call(function fn(){}) // f fn(){}
+        sum.call(null)  //window
+        sum.call([1])  //[1]
+
+        sum.apply(obj, [1, 2])
+
+        var omg = sum.bind(obj,1,3)
+        console.log(omg);
+        omg();
+        console.log(omg===sum);
+
+        document.onclick = (function () {
+            console.log(this)
+        }).bind(window) //this 指向window
+
+        document.onclick = function () {
+            // console.log(this);
+            var _this = this;
+            setTimeout(function () {
+                console.log(_this)
+            }, 400) //document
+        }
+        document.onclick = function () {
+            setTimeout((function () {
+                console.log(this)    //document
+            }).bind(this), 400)
+        }
+
+        var arr = [1, 2, 3, 4, 5];
+        console.log(Math.max(...arr))
+        console.log(Math.max.apply(Math, arr))
+    </script>
+</body>
+</html>

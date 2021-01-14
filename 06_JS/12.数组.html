@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <script>
+/*         var arr = new Array(10)
+        document.write(arr) */
+
+        /* var arr = ['10','20','30','50','深圳','上海','成都']; */
+ /*        document.write(arr.length);
+        document.write('<br>');
+        document.write(arr[3]); */
+
+/*         for( var i=0;i<arr.length;i++){
+            document.write(arr[i]+"<br>")
+        } */
+
+// 长度是10的随机数组
+
+        // var arr = new Array(10);
+        // for(var i=0;i<arr.length;i++){
+        //     arr[i]=parseInt(Math.random()*10);
+        // }
+        // alert(arr);
+
+// 数组遍历
+    //  var arr = ['10','20','30','50','深圳','上海','成都'];
+    // for(var i = 0;i<arr.length;i++){
+    //     document.write(arr[i]+"<br>")
+    // }
+    // for(var i in arr ){
+    //     document.write(arr[i]+"<br>")
+    // } 
+// 数组.push()  给数组的末尾添加元素
+        // var arr = ['深圳','上海','成都'];
+        // var res = arr.push('北京','重庆','广州');
+        // document.write(arr);
+        // document.write('<br>');
+        // document.write(res);
+
+//数组.pop()  从数组的末尾取去一个数
+        //     var arr = ['深圳','上海','成都'];
+        //     var res = arr.pop();
+        //     document.write(arr);
+        //     document.write('<br>');
+        //     document.write(res); 
+
+// 数组.shift()  从数组的头部取去一个数
+
+        //     var arr = ['深圳','上海','成都'];
+        //     var res = arr.shift();
+        //     document.write(arr);
+        //     document.write('<br>');
+        //     document.write(res); 
+
+ // 数组.unshift()  从数组的头部插入元素  
+            // var arr = ["yellow","black","blue"];
+            //         for(i=arr.length;i>=0;i--){
+            //             arr[i]=arr[i-1]
+            //         }
+            //         arr[0]='pink'
+            //         document.write(arr) 
+
+
+        // var arr = ['深圳','上海','成都'];
+        // var res = arr.unshift('北京','重庆','广州');
+        // document.write(arr);
+        // document.write('<br>');
+        // document.write(res);
+
+//  数组.concat（数组，数据……）  拼接
+            // var arr1=[1,2,3];
+            // var arr2=[11,22,33];
+            // var arr3=arr1.concat(arr2,55,'66');
+            // document.write(arr1,'<br>',arr2,'<br>',arr3);
+            // document.write('<br>');
+            // document.write(arr2);
+            // document.write('<br>');
+            // document.write(arr3);
+
+//  数组.slice（start,end）可以基于当前数组获取指定元素[start,end),提取出元素生成新数组
+/*                 var arr = ['北京','重庆','广州','深圳','上海','成都'];
+                var newarr = arr.slice(1,4);
+                document.write(newarr,'<br>');
+                document.write(arr); */
+
+    
+//  数组.splice（start,length,数据1，数据2……）； 增加 删除 修改
+                var arr = ['北京','重庆','广州','深圳','上海','成都'];
+                var res = arr.splice(2,0,"hello,world");
+                document.write(arr);
+                document.write(res);
+
+
+
+// /* 删除 */  var arr = ['北京','重庆','广州','深圳','上海','成都'];
+//         var res = arr.splice(2,1);
+//         document.write(arr,'<br>',res);
+
+            //  var arr = ['北京','重庆','广州','深圳','上海','成都'];
+/* 修改  */ //  var res = arr.splice(2,1,"hello");
+           //   document.write(arr,'<br>',res);
+
+            
+
+// 数组.join（）讲数组中的元素，用传入的拼接符，拼接成一个字符串
+        //  var arr = ['深圳','上海','成都']
+        //  var res = arr.join("==");
+        //  document.write(arr,'<br>',res);
+        //  document.write(arr.join('0').split(''))
+
+
+// 数组.reverse（）逆序
+        // var arr = ['深圳','上海','成都']
+        // var res = arr.reverse();
+        // document.write(arr,);
+
+// 数组.sort（）数组排序
+        //    var arr = ['30','10','20','40','5'];
+        //    arr.sort(function(value1,value2){
+        //        return value1-value2;
+        //    })
+        //    document.write(arr);
+
+// 定义一个含有30个整型元素的数据，按顺序分别授予从2开始的偶数
+// 然后按顺序每五个数求出一个平均数，并在另一个数组中输出
+        // 1.声明数组
+        // var arr= new Array(30);
+        // for(var i = 0; i<arr.length;i++){
+        //     arr[i]=i*2+2;
+        // }
+        // // document.write(arr)
+        // // document.write("<br>")
+        // // 2.平均数
+        // var averagearr=[];
+        // for(var i =0; i<6;i++){
+        //     // 3.取出求平均数的这组数
+        //     var newarr = arr.splice(0,5);
+        //     // var newarr = arr.slice(i*5,(i+1)*5);
+        //     // document.write(newarr);
+        //     // document.write("<br>");
+
+        //     //4. 求平均数
+        //     var sum = 0;
+        //     for(var j =0 ;j<newarr.length;j++){
+        //         sum+=newarr[j];
+        //     }
+        //     averagearr.push(sum/5);
+        // }
+        // document.write(averagearr);
+
+            // var arr = ["yellow","black","blue"];
+            //         for(var i=1;i<=arr.length;i++){
+            //             arr[i-1]=arr[i]
+            //         } 
+            //         arr.length=2
+            //         document.write(arr) 
+
+            // var arr=[1,2,3,4,5,6,8,9,10];
+            // var num=0;
+            // for(var i =0;i<arr.length;i++){
+            //     arr[i];
+            //     num+=arr[i];
+            // }
+            // document.write(num);
+
+
+
+
+//         // 编写方法，实现冒泡
+//         var arr = [29,45,51,68,6,72,97,88];
+//     //外层循环，控制趟数，每一次找到一个最大值
+//     for (var i = arr.length - 1; i>=0; i--) {
+//         // 内层循环,控制比较的次数，并且判断两个数的大小
+//         for (var j = arr.length - 1 - i; j >=0; j--) {
+//             // 白话解释：如果前面的数大，放到后面(当然是从小到大的冒泡排序)
+//             if (arr[j] < arr[j - 1]) {
+//                 var temp = arr[j];
+//                 arr[j] = arr[j - 1];
+//                 arr[j - 1] = temp;
+//             }
+//         }
+ 
+//     }
+//     document.write(arr);
+
+
+
+    </script>
+</body>
+</html>

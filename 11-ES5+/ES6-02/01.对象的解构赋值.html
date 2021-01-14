@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //对象的解构 讲究的是key的一一对应，和顺序无关
+/*         const obj = {
+            foo: 1,
+            hoo: 2
+        } */
+        /*         
+        const{
+            foo:a,
+            hoo:b
+        }=obj;
+        console.log(a,b) */
+
+        //可以给解构设置默认值
+/*         const {
+            foo,
+            hoo,
+            doo = 3
+        } = obj;
+        console.log(foo, hoo, doo); */
+
+/*         const obj2 ={
+            name:"xxx",
+            hobby:["抽烟","喝酒","烫头"]
+        }
+        const {
+            name,
+            hobby:[a,b,c]
+        } = obj2;
+        console.log(name,a,b,c) */
+
+/*         //解构log方法
+        const {
+            log
+        }=console;
+        log("xxxxx") */
+
+        //获取数组的第一个和最后一个值
+        const arr = [1,5,6,8,3,4];
+        const{
+            0:a,
+            [arr.length-1]:b
+        }=arr;
+        console.log(a,b)
+
+        //应用1
+/*         function fn(){
+            return{
+                name: "xxxxx",
+                age:"20",
+            }
+        }
+        const {
+            name ,
+            age,
+        }=fn();
+        console.log(name,age) */
+
+        //应用2 传参
+
+        function fn([x,y,z,u]){
+            console.log(x,y,z,u)
+        }
+        fn([1,2,3,4])
+
+        //对象解构的时候也可以使用rest参数
+
+        const obj = {
+            name :"xxxx",
+            age:"12",
+            sex:"男"
+        }
+
+        const {
+            name,
+            ...rest
+        }= obj;
+        console.log(name,rest)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        Function.prototype.myCall = function(con,...args){
+            let type = typeof con;
+            //判断改变后的上下文对象是null或undefined的时候 this该指向window
+            if(con===null||con===undefined){
+                con = window;
+            }
+            //如果改变的上下文对象是基本包装类型 ，this指向指向包装对象
+            switch(type){
+                case "number":
+                    con = new Number(con);
+                    break;
+                case "string":
+                    con = new String(con);
+                    break;
+                case "boolean":
+                    con = new Boolean(con);
+                    break;
+            }
+            let key = Symbol('key');
+            con[key] = this;
+            let result = con[key](...args)
+            delete con[key];
+            return result;
+        }
+
+        function fn (a,b){
+            console.log(this,a+b);
+            return "666";
+        }
+        console.log(fn.myCall(null,2,8))
+    </script>
+</body>
+</html>

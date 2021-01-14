@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hot{
+            margin: 0px auto;
+            padding: 0px;
+            width: 300px;
+            height: 78px;
+            /* border: 1px solid black; */
+        }
+        .hot a{
+            display: block;
+            text-decoration: none;
+        }
+        .hot-1,.hot-2,.hot-3{
+            width: 100px;
+            height: 78px;
+            /* border: 1px solid black; */
+            float: left;
+            box-sizing: border-box;          
+        }
+        .hot .hot-1 div,.hot .hot-2 div,.hot .hot-3 div{
+            width: 35px;
+            height: 35px;
+            /* border: 1px solid black; */
+            background-image: url('./img/bg0.png');
+            margin: 8px auto 3px;
+        }
+        .hot .hot-1 div{
+            background-position: -35px 0;
+        }
+        
+        .hot .hot-2 div{
+            background-position: 0px 0;
+        }
+        .hot .hot-3 div{
+            background-position: 0px 0;
+        }
+        .hot .hot-1 span,.hot .hot-2 span,.hot .hot-3 span{
+            display: block;
+            text-align: center;
+        }
+        .hot .hot-1 span{
+            color: #E60012;
+        }
+        .hot .hot-2 span,.hot .hot-3 span{
+            color: #e999;
+        }
+        .hot .hot-1 span:hover,.hot .hot-2 span:hover,.hot .hot-3 span:hover{
+            color:lightgreen;
+        }
+    </style>
+</head>
+<body>
+    <div class="hot">
+        <div class="hot-1">
+            <a href=""><div></div></a>
+            <a href=""><span>热卖排行</span></a>
+        </div>
+        <div class="hot-2">
+            <a href=""><div></div></a>
+            <a href=""><span>特价排行</span></a>
+        </div>
+        <div class="hot-3">
+            <a href=""><div></div></a>
+            <a href=""><span>新品排行</span></a>
+        </div>
+    </div>
+</body>
+</html>

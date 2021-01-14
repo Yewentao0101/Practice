@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //接受后端的数据一般都是JSON字符串格式
+        //假如接受了一个json字符串
+        const dataStr = `{"name":"瓦尔登湖","time":"longtime ago","author":"unremember"}`;
+        const re1 = JSON.parse(dataStr);
+        console.log(re1);
+
+        const dataObj = {
+            "name":"瓦尔登湖",
+            "time":"longtime ago",
+            "author":"unremember"
+        }
+        const re2 = JSON.stringify(dataObj);
+        console.log(re2);
+    </script>
+</body>
+
+</html>

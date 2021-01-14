@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 
+        第二种方式（内部样式表）
+            —将样式编写到head中的style标签里
+            然后通过css的选择器来选中元素并为其设置各种样式
+            问题：内部样式表，只能对一个网页起作用
+               它里边的样式不能跨网页使用
+
+     -->
+
+     <!-- <style>
+         p{color: yellow;font-size: 50px;}
+     </style> 
+
+      -->
+
+      <!--
+             第三种方式，（外部样式表）
+               -可以将css样式编写到一个外部的css文件中
+               然后通过link标签引入外部的css文件
+               _将样式编写到外部的css文件中，可以使用浏览器的缓存样式
+                 从而加快网页的加载速度
+
+       -->
+       <link rel="stylesheet" href="./style.css">
+
+
+</head>
+<body>
+
+    <!-- 
+       网页分三个部分：
+           结构（html）
+           表现（css）
+           行为（javascript）
+        
+        CSS
+           -层叠样式表
+           -网页实际上是一个多层的结构，通过css可以分别为网页的每一个层来设置样式
+               二最终我们能看到知识网页的最上一层
+           -总之一句话，css用来设置网页中元素的样式
+        -->
+
+        <!-- 
+            使用css来修改元素样式
+
+            第一种方式：(内联样式，行内样式)
+                —在标签内部通过style属性来设置元素的样式
+                -问题：使用内联样式，只能对一个标签生效
+                       如果希望影响到多个元素必须都复制一遍
+                       样式发生变化是，只能一个一个一个修改
+                —注意：开发时绝对不要使用内联样式
+
+         -->
+
+
+        <!-- <p style="color:red; font-size: 30px;">少小离家老大回，乡音无改鬓毛衰</p> -->
+<p>l落霞与孤鹜齐飞，秋水共长天一色</p>
+
+</body>
+</html>

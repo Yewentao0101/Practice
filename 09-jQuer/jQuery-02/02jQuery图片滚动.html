@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .box{
+            /* border: 1px solid lightcoral; */
+            height: 360px;
+            width: 1024px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .clickLeft img,.clickRight img{
+            position: absolute;
+            height: 50px;
+            width: 50px;
+        }
+        .clickLeft img{
+            left: 0px;
+            top:180px;
+            z-index: 1;
+        }
+        .clickRight img{
+            left: 974px;
+            top:180px;
+            z-index: 1;
+        }
+        .imgLists li{
+            list-style: none;
+            position: relative;
+        }
+        .imgLists li img{
+            display: block;
+            height: 360px;
+            width: 1024px;
+            position: absolute;
+            top: 0px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <button class="clickLeft"><img src="./image/right.jpg" alt=""></button>
+        <button class="clickRight"><img src="./image/left.jpg" alt=""></button>
+        <ul class="imgLists">
+            <li><img src="./image/111.jpg" alt=""></li>
+            <li><img src="./image/222.png" alt=""></li>
+            <li><img src="./image/333.png" alt=""></li>
+            <li><img src="./image/444.png" alt=""></li>
+            <li><img src="./image/555.jpg" alt=""></li>
+        </ul>
+    </div>
+    <script src="./jquery.js"></script>
+    <script>
+        var i=4;
+        $(".clickLeft img").click(function(){
+            i--;
+            $(".imgLists li").eq(i).show().siblings().hide();
+        })
+        $(".clickRight img").click(function(){
+            i++;
+            $(".imgLists li").eq(i).show().siblings().hide();
+        })
+    </script>
+</body>
+</html>

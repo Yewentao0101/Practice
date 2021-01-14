@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function outputNumber(fn){
+            for(var i=1;i<=100;i++){
+                if(fn(i)){
+                    console.log(i);
+                }
+            }
+        }
+        // outputNumber(ru1);
+        // outputNumber(ru2);
+        outputNumber(ru3);
+//舍弃能被5整除的数
+        function ru1(n) {
+            if (n % 5 == 0) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+//保留偶数
+        function ru2(n){
+            if(n%2==0){
+                return true;
+            }else{
+                return false;
+            }
+        }
+//舍弃个位数为3的数
+        function ru3(n){
+            var last=parseInt(n%10)
+            if(last===3){
+                return false;
+            }else{
+                return true;
+            }
+        }
+       outputNumber(ru3(99)); 
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // js调用函数时传递变量参数时
+        // 只有值传递,没有引用传递,只不过传递的值可能地址,也可能是其他基本类型
+        var o5 = {
+            m:2
+        }
+        var o6 = o5;
+        function fn(obj){
+            obj = {
+                m:5
+            }
+             console.lg
+        }
+
+        fn(o5);
+        console.log(o5.m,o6.m,o6===o5); //  2  2  true 
+
+
+        var o5 = {
+            m: 5
+        };
+        var o6 = o5;
+
+        function fn(obj) {
+            obj.m = 2
+        }
+        fn(o5)
+        console.log(o5.m, o6.m, o6 === o5)  // 2  2  true
+    </script>
+</body>
+</html>

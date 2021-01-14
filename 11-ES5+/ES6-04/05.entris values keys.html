@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //entries() 对键值对的遍历
+        //keys() 对键名的遍历
+        //values() 对值的遍历
+
+        const arr =["a","b","c","d"];
+        const arrEn = arr.entries();
+        console.log(arrEn.next());
+        console.log(arrEn.next());
+        console.log(arrEn.next());
+        console.log(arrEn.next());
+        const arrKeys = arr.keys();
+        console.log(arrKeys.next())
+        console.log(arrKeys.next())
+        console.log(arrKeys.next())
+        console.log(arrKeys.next())
+        const arrValues = arr.values()
+        console.log(arrValues.next())
+        console.log(arrValues.next())
+        console.log(arrValues.next())
+        console.log(arrValues.next())
+        console.log(arrValues.next())
+    </script>
+</body>
+</html>

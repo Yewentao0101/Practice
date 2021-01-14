@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var o1 = {
+            m:1
+        }
+        var o2 = o1;
+        o2.m=2;
+        console.log(01.m,o1===o2) // 2 true
+
+        var o3 = {
+            m:3
+        }
+        var o4 = o3
+        o3 = {
+            m:4
+        }
+        console.log(04.m,o4===o3);// 3 false
+    </script>
+</body>
+</html>

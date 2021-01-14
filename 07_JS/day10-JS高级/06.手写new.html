@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+            return 1;
+        }
+        Person.prototype.do = function () {
+            console.log("xxxxxxxx");
+        }
+        function myNew(FN) {
+            //声明一个对象obj，作为new的返回值（实例化对象）
+            var obj = {};
+            //调用构造函数，并且把构造函数的this指向obj
+            var FNReturn = FN.apply(obj, Array.from(arguments).slice(1));
+            //修改obj的隐式原型为构造函数的显示原型
+            obj.__proto__ = FN.prototype;
+
+            //判断类型是object 并且不是null
+            if (typeof FNReturn === 'object' && FNReturn != 'null') {
+                return FNReturn;
+            }
+
+            //判断是function
+            if (typeof FNReturn === 'function') {
+                return FNReturn;
+            }
+
+            //基本类型值
+            return obj;
+
+        }
+
+        var p1 = myNew(Person, "xxx", "21");
+        console.log(p1)
+        console.log(p1.constructor)
+    </script>
+</body>
+
+</html>

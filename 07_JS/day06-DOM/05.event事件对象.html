@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            border: 1px solid pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+    var oBox = document.getElementById('box');
+    oBox.onclick = function (event) {
+            console.log(window.event)
+            console.log(event);
+        }
+        //event事件对象：当事件发生的时候，有一个对象保存的是当前事件所有相关的信息，这个对象被称作为event事件对象
+    </script>
+
+</body>
+</html>

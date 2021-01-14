@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*  reduce():累加器
+            reduce 有四个参数
+            参数1：回调函数
+                四个参数
+                    参数一：初始值或者上一次回调函数的返回值
+                    参数二：当前遍历的数组的值
+                    参数三：当前数组值的下标
+                    参数四：原数组
+            参数：初始值 */
+        //reduce 求数组最大值
+/*         const arr = [1, 5, 6, 9, 24, 36, 4, 56];
+        const re = arr.reduce((p, c) => {
+            return p > c ? p : c;
+        })
+        console.log(re) */
+        //计算字符串中每一个值出现的次数，用对象来表示
+        const str = "adsksnxnsodksdlakkdadsa"
+        const re = [...str].reduce((p, c) => {
+            p[c] ? p[c]++ : p[c] = 1;
+            return p;
+        },{}) 
+        console.log(re)
+    </script>
+</body>
+
+</html>

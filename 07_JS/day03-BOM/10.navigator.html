@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(navigator);//浏览器的信息
+        console.log(navigator.onLine);//onLine属性代表是否连接网络
+        console.log(navigator.platform);//platform 查看当前操作系统 （win32 MacOs linux）
+        console.log(navigator.userAgent);//userAgent:浏览器识别码，用户代理信息
+
+
+
+        //检查浏览器
+        var ua = navigator.userAgent.toLowerCase();
+        var info = {
+            ie: /msie/.test(ua) && !/opera/.test(ua),
+            op: /opera/.test(ua),
+            sa: /version.*safari/.test(ua),
+            ch: /chrome/.test(ua),
+            ff: /gecko/.test(ua) && !/webkit/.test(ua)
+        }
+        info.ie && console.log("ie");
+        info.op && console.log("欧朋");
+        info.sa && console.log("safari");
+        info.ch && console.log("chrome");
+        info.ff && console.log("firfox");
+
+
+        //检测操作系统      
+        var isWin = (navigator.userAgent.indexOf("Win") != -1);// 如果是Windows系统，则返回true
+        var isMac = (navigator.userAgent.indexOf("Mac") != -1);// 如果是Macintosh系统，则返回true 
+        var isUnix = (navigator.userAgent.indexOf("X11") != -1);// 如果是UNIX系统，则返回true
+        var isLinux = (navigator.userAgent.indexOf("Linux") != -1);// 如果是Linux系统， xc则返回true
+
+        console.log(isWin, isMac, isUnix, isLinux)
+    </script>
+</body>
+</html>

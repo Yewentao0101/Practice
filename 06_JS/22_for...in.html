@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+/*         var a = [1, 2, 3, 4, 5];
+        a.abc = '哈哈';
+        console.log(a);
+        console.log(a[0]);
+                
+        function abc(){
+            console.log('哈哈');
+        }
+        abc.abc = 'abc';
+        console.dir(abc);
+        abc(); */
+
+
+
+
+    // function test(){
+    //     function test1(){
+    //         console.log(this);
+    //     }
+    //     test1();
+    // }
+    // test();
+
+    // function t(){
+    //     function tt(){
+    //         function ttt(){
+    //             console.log(this);
+    //         }
+    //         ttt();
+    //     }
+    //     tt();
+    // }
+    // t();
+
+/*     var a = '全局';
+    var foo = {
+        a:'foo',
+        test:function(){
+            console.log(this.a);
+        }
+    };
+    foo.test(); */
+
+/*     var a = 4;
+    function test(){
+        console.log(this.a);
+    }
+    var foo = {
+        a:1,
+        test:test
+    };
+    foo.test();
+    test(); */
+
+/*     var obj = {
+        a:2,
+        test:function(){
+            console.log(this.a);
+        }
+    }
+    var test = obj.test;
+    var a = 3; 
+    test();*/
+
+/*     var obj2 = {
+        a: 'obj2',
+        foo: function () {
+            console.log(this.a);
+        }
+    }
+
+    var obj1 = {
+        a: 'obj1',
+        obj2: obj2
+    }
+    obj1.obj2.foo(); */
+
+
+/*     function foo(){
+        console.log(this.a);
+    }
+    var obj = {
+        a:2,
+        foo:foo
+    }
+    function doFoo(fn){//fn=obj.foo
+        fn();//fn();//window
+    }
+    var a = 'gs';
+    doFoo(obj.foo); */
+    var obj = {};
+    console.log(obj.valueOf())
+    </script>
+</body>
+</html>~

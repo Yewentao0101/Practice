@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         #ad{
+                margin:0 auto;
+                width: 730px;
+               /*  border:1px solid green; */
+               position: relative;
+            }
+
+            #ad div.ad-pic{
+                width:730px;
+                height:454px;
+                /* border:1px solid red;  */
+
+                position: relative;
+            }
+
+            #ad div.ad-pic a{
+                display:block;
+                width:100%;
+                height:100%;
+
+                position:absolute;
+                top:0;
+                left:0;
+            }
+
+            #ad div.ad-pic a img{
+                width:100%;
+                height:100%;
+            }
+            #ad div.ad-pic a:first-of-type{
+                z-index:1;
+            }
+
+            #ad div.ad-pic a:target{
+                z-index: 2;
+            }
+            #ad ul{
+                margin:0;
+                padding:0;
+                list-style-type:none;
+                position: absolute;
+                top: 420px;
+                left: 315px;
+                z-index: 2;
+            }
+            #ad ul li{
+                float:left;
+                margin-left:10px;
+            }
+            #ad ul.ad-frame li a div{
+                width: 15px;
+                height: 15px;
+                background-color:gold;
+                /* border: 1px solid green; */
+            }
+            #ad .arrow-prev,#ad .arrow-next{
+                position:absolute;
+                width:42px;
+                height:70px;
+                /* border:1px solid pink; */
+                background-image:url('./05_尚品汇/image/icon-slides.png');
+                top:50%;
+                margin-top:-35px;
+                z-index: 2;
+            }
+            #ad .arrow-prev:hover,#ad .arrow-next:hover{
+                cursor: pointer;
+            }
+            #ad .arrow-prev{
+                left:0;
+                background-position: -84px 0px;
+            }
+            #ad .arrow-next{
+                right:0;
+                background-position: -126px 0px;
+            }
+            #ad:hover .arrow-prev{
+                background-position: 0px 0px;
+            }
+            #ad:hover .arrow-next{
+                background-position: -42px 0px;
+            }
+    </style>
+</head>
+<body>
+    <div id="ad">
+        <div class="ad-pic">
+            <a href="#" name="pic-1">
+                <img src="./05_尚品汇/image/banner3.jpg" />
+            </a>
+            <a href="#" name="pic-2">
+                <img src="./05_尚品汇/image/banner4.jpg" />
+            </a>
+            <a href="#" name="pic-3">
+                <img src="./05_尚品汇/image/banner4.jpg" />
+            </a>
+            <a href="#" name="pic-4">
+                <img src="./05_尚品汇/image/banner3.jpg" />
+            </a>
+        </div>
+        <ul class="ad-frame">
+            <li>
+                <a href="#pic-1">
+                    <div></div>
+                </a>
+            </li>
+            <li>
+                <a href="#pic-2">
+                    <div></div>
+                </a>
+            </li>
+            <li>
+                <a href="#pic-3">
+                    <div></div>
+                </a>
+            </li>
+            <li>
+                <a href="#pic-4">
+                    <div></div>
+                </a>
+            </li>
+        </ul>
+        <div class="arrow-prev"></div>
+        <div class="arrow-next"></div>
+    </div>
+</body>
+</html>

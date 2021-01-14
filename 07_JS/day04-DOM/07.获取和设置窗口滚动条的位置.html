@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            height: 3000px;
+        }
+
+        #btn {
+            position: fixed;
+            left: 20px;
+            top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn">点我啊</button>
+    <div id="box"></div>
+    <script>
+        var oBtn = document.getElementById('btn');
+        oBtn.onclick = function () {
+            console.log(getWinYScroll());
+        }
+
+        //封装装一个全兼容的获取系统滚动条的方法
+        function getWinYScroll() {
+            var html = document.documentElement;
+            var body = document.body;
+            return window.pageYoffset || html.scrollTop || body.scrollTop;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 添加新属性：
+                - 直接传统方法添加，可以被修改删除枚举
+
+                - Object.defineProperty()
+                    - 参数1：被扩展的对象
+                    - 参数2：属性名
+                    - 参数3：属性的描述，描述默认值都是false
+
+                - Object.defineProperties()
+                    - 参数1：被扩展的对象
+                    - 参数2：对象（多个属性的key和对象的描述） */
+        //创建一个对象 并自带属性
+        const newObj1 = Object.create(null, {
+            //属性的描述除了value意外都可以省略，默认值是false
+            name: {
+                value: "XXX",
+                writable: false,
+                enumerable: false,
+                configurable: false,
+            }
+        });
+
+        //添加属性方法1 成员访问.设置
+        newObj1.age = 18;
+
+        newObj1.age = 20;
+        console.log(newObj1)
+        for (var key in newObj1) {
+            console.log(key)
+        }
+        delete newObj1.age
+        console.log(newObj1)
+
+        Object.defineProperties(newObj1, {
+            sex: {
+                value: "女",
+            },
+            age: {
+                value: 18
+            }
+        })
+
+        console.log("被修改-----")
+        newObj1.sex = "男";
+        console.log(newObj1)
+
+        console.log("被枚举-----")
+        for (var key in newObj1) {
+            console.log(key)
+        }
+
+        console.log("被删除-----")
+        delete newObj1.sex
+        console.log(newObj1)
+    </script>
+</body>
+
+</html>

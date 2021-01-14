@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <p>1</p>
+        <p>2</p>
+        <!-- <p>333</p> -->
+        <p>4</p>
+    </div>
+    <script>
+        var tBox = document.getElementById('box')
+        var tBoxChildren = tBox.childNodes;
+        console.log(tBoxChildren);//[object NodeList]
+        document.write('<br>');
+        //document节点
+  
+        document.write(document.nodeType);//9
+        document.write('<br>');
+        document.write(document.nodeName);//document
+        document.write('<br>');
+        document.write(document.nodeValue);//null
+        document.write('<br>');
+        document.write('<br>');
+        //元素节点
+        document.write(tBox.nodeType);//1
+        document.write('<br>');
+        document.write(tBox.nodeName);//DIV
+        document.write('<br>');
+        document.write(tBox.nodeValue);//null
+        document.write('<br>');
+        document.write('<br>');
+        //文本节点
+        document.write(tBoxChildren[0].nodeType);//3
+        document.write('<br>');
+        document.write(tBoxChildren[0].nodeName);//#text
+        document.write('<br>');
+        document.write(tBoxChildren[0].nodeValue);//文本内容
+        document.write('<br>');
+        document.write('<br>');
+        //注释节点
+        document.write(tBoxChildren[5].nodeType);//8
+        document.write('<br>');
+        document.write(tBoxChildren[5].nodeName);//#commen
+        document.write(tBoxChildren[5].nodeValue);//333
+        document.write('<br>');
+        //创建一个属性节点
+        var attrNode = document.createAttribute("study");
+        //给属性节点一个value值
+        attrNode.value = "DOM";
+        console.log(attrNode);
+        document.write(attrNode.nodeType); //2
+        document.write('<br>');
+        document.write(attrNode.nodeName); //属性的key  study 
+        document.write('<br>');
+        document.write(attrNode.nodeValue); //属性的value DOM
+    </script>
+</body>
+</html>

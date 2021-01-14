@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: red;
+        }
+
+        .con {
+            width: 100px;
+            height: 100px;
+            background-color: lawngreen;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="con"></div>
+    </div>
+
+    <script>
+        //注意：只能阻止当前事件的传播
+        var tCon = document.querySelector('.con');
+        var tBox = document.querySelector('.box');
+
+        tCon.onmousedown = function (e) {
+            console.log("鼠标按下");
+        }
+        tCon.onmouseup = function (e) {
+            console.log("鼠标松开");
+        }
+        tCon.onclick = function (e) {
+            e.stopPropagation();
+        }
+        tBox.onclick = function (e) {
+            console.log("鼠标点击");
+        }
+
+
+        tBox.oncontextmenu = function(e){
+            e.stopPropagation();
+        }
+        document.oncontextmenu = function () {
+            return false;
+        }
+    </script>
+</body>
+</html>

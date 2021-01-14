@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <script src=""></script>
+</head>
+
+<body>
+    <script>
+        test();
+        function test(){
+            console.log('闫海静真英俊！');
+        }
+        test(); 
+
+
+        /*执行过程：
+        var a;//a的值为undefiend   创建阶段。
+        console.log(a);//打印的值为undefiend 执行阶段
+        a=1;//执行阶段
+        */
+        /* console.log(a);//undefined
+        var a = 1; */
+
+        /* 执行过程：
+        var a;
+        var b;
+        if(true){
+            a = 1;
+        } else {
+            b = 2;
+        }
+        */
+        if (true){
+            var a = 1;
+        } else {
+            var b = 2;
+        }
+        console.log(a);//1
+        console.log(b);//undefined 
+
+
+       /*  
+       //结果不确定。
+       if(false){
+            function test(){
+                console.log('刘杰真英俊！');
+            }
+        } else {
+            function test(){
+                console.log('佩奇真英俊！');
+            }
+        }
+
+        test(); */
+
+        
+    </script>
+</body>
+
+</html>

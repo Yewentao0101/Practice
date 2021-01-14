@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            position: relative;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            top:50px;
+            background-color: lightcoral;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn">动起来</button>
+    <div class="box"></div>
+    <script src="./jquery.js"></script>
+    <script>
+        $(".btn").click(function () {
+            //链式调用的时候，直接就会解析链式所有的内容，
+            //但是 碰到了动画，就会把动画放在动画队列中，然后动画依次执行
+            $(".box").animate({
+                left: "600px"
+            }, 1000).animate({
+                top: "600px"
+            }, 1000).animate({
+                left: "0px"
+            }, 1000).animate({
+                top: "50px"
+            }, 1000).css("background-color", "lightpink")
+        })
+    </script>
+</body>
+</html>

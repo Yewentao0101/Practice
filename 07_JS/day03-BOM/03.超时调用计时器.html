@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            /* 
+            超时调用计时器
+                window.setTimeout();
+                    - 参数1：是超时以后调用的代码
+                        - 字符串写法
+                        - 如果代码特别多，书写字符串麻烦，那么可以书写一个函数,时间到了之后，计时器会自动调用函数
+                    - 参数2：时间(ms为单位)
+
+                    - 第三个参数之后，都是给参数1的函数传参用的*/
+
+
+        // window.setTimeout(alert("你真个小可爱xxxxx"),1000);
+        // window.setTimeout("alert('你真个小可爱xxxxx')",2000);
+
+        /*  function fn(){
+            var a = 1;
+            a++
+            alert(++a);
+        }
+        window.setTimeout(fn,2000); */
+
+        function fn(a,b){
+            alert(a+b);
+        }
+        window.setTimeout(fn,2000,2,3); 
+    </script>
+</body>
+</html>

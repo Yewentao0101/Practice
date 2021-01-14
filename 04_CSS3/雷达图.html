@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+        body{
+            margin: 0;
+            background: linear-gradient(to bottom,rgba(32, 255, 77, 0.15) 0px,rgba(32, 255, 77, 0.15) 2px, transparent 2px),
+            linear-gradient(to right, rgba(32, 255, 77, 0.4) 0px, rgba(32, 255, 77, 0.4) 2px, transparent 2px), black;
+            position: relative;
+            background-size: 40px 40px;
+        }
+        #f{
+            overflow: hidden;
+            width: 500px;
+            height: 500px;
+            border: 2px solid rgb(30,234,71);
+            box-sizing: border-box;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -250px;
+            margin-left: -250px;
+            border-radius: 50%;
+            background-image: radial-gradient(rgba(32, 255, 77, 0.4) 0%, transparent 75%);
+        }
+        #f::before {
+            content: '';
+            width: 100%;
+            height: 0px;
+            position: absolute;
+            top: 249px;
+            margin-top: -1px;
+            transform: rotate(90deg);
+            border: 1px solid rgb(30, 234, 71);
+            /* border:1px solid red; */
+        }
+        #f::after {
+            content: '';
+            width: 100%;
+            height: 0px;
+            position: absolute;
+            top: 50%;
+            margin-top: -1px;
+            border: 1px solid rgb(30, 234, 71);
+            /* border:1px solid yellow; */
+        }
+        #f1{
+            width: 350px;
+            height: 350px;
+            border: 2px solid rgb(30,234,71);
+            border-radius: 50%;
+            box-sizing: border-box;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -175px;
+            margin-left: -175px;
+        }
+        #f2{
+            width: 200px;
+            height: 200px;
+            border: 2px solid rgb(30,234,71);
+            border-radius: 50%;
+            box-sizing: border-box;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -100px;
+            margin-left: -100px;
+        }
+        #f3{
+            width: 50px;
+            height: 50px;
+            border: 2px solid rgb(30,234,71);
+            border-radius: 50%;
+            box-sizing: border-box;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -25px;
+            margin-left: -25px;
+        }
+        #zz{
+            box-sizing: border-box;
+            width: 250px;
+            height: 250px;
+            background-image: linear-gradient(45deg, transparent 0%, transparent 50%, rgb(30, 234, 71));
+            border-radius: 250px 0 0 0;
+            animation-name: sm;
+            animation-duration: 10s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            transform-origin: 100% 100%;
+        }
+        @keyframes sm {
+            from {
+                transform: rotateZ(0deg);
+            }
+
+            to {
+                transform: rotateZ(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="f">
+        <!-- 雷达追踪扇形-->
+        <div id="zz"></div>
+        <!-- 三个圈 -->
+        <div id="f1">
+            <div id="f2">
+                <div id="f3"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="push-button">添加</button>
+    <ul id="box">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <script>
+        var tPushbutton = document.getElementById("push-button");
+        var tBox = document.getElementById("box");
+        var tLis = tBox.querySelectorAll("li");
+        tPushbutton.onclick = function(){
+            for (var i = 0; i < tLis.length; i++) {
+                var tNewLi = document.createElement("li");
+                tNewLi.innerHTML = "新的li"
+                tBox.appendChild(tNewLi);
+            }
+
+        }
+    </script>
+</body>
+</html>

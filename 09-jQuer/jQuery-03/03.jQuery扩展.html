@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script src="./jquery.js"></script>
+    <script>
+        //给实例化对象扩展
+        $.fn.bgc = function (color) {
+            $(this).css("background", color);
+        }
+        $.fn.extend({
+            bgc: function (color) {
+                $(this).css("background", color)
+            },
+            w: function (w) {
+                $(this).css("width", w)
+            }
+        })
+        $(".box").bgc("pink");
+        $(".box").w("300px");
+
+        //静态扩展
+/*         $.ShuZuPaiXu = function(arr){
+            return  arr.sort();
+        } */
+        $.extend({
+            ShuZuPaiXu:function(arr){
+                return arr.sort()
+            }
+        })
+        console.log($.ShuZuPaiXu([5,3,6,4,2,1,1]))
+    </script>
+</body>
+
+</html>

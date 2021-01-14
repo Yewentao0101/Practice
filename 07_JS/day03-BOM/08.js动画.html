@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: turquoise;
+            position: absolute;
+            left: 0;
+            top: 100px;
+
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">老婆不在家才能点击</button>
+    <div id="box"></div>
+
+    <script>
+        var tBtn = document.getElementById("btn");
+        var tBox = document.getElementById("box");
+
+        var distance = 0;
+        var timer = null;
+
+        tBtn.onclick = function(){
+            clearInterval(timer);
+            timer = setInterval(function(){
+                distance++;
+                if(distance>=1000){
+                    clearInterval(timer);
+                    distance=1000//distance大于1000时 定为1000
+                }
+            tBox.style.left = distance + "px"            
+            },1000/60)
+        }
+
+    </script>
+</body>
+</html>

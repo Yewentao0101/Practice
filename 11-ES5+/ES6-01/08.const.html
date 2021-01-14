@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        常量：不会变变化的数据，有些时候有的数据是不允许修改的，所以需要定义常量
+        常量：
+        1.不能给常量赋值（如果是对象，之傲不改变地址即可，可以修改对象中的内容）
+        2.常量声明必须赋值
+        3.常量也是块级作用域生效
+        4.常量也不能提升
+        5.常量也不能重复声明
+        6.全局的常量和let声明的变量不再是window对象的属性和方法
+        */
+
+        {
+            const PI = 3.14159;
+            console.log(PI)
+        }
+
+        {
+            const PI = 3.1415926;
+            //const PI = 3.14   //Assignment to constant variable   重复声明
+        }
+
+        const person = {
+            name:"xxx",
+            age : 18,
+        }
+        person.age = 20;
+        console.log(person.age)
+
+        const a = 1;
+        let b = 2;
+        console.log(window.a) //undefined
+        console.log(window.b) //undefiend
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //trim 去两端空格
+        //trimStart  前边去空格
+        //trimEnd 末尾去空格
+        
+        //startWith 判断开头有没有包含某个字符串
+        //endWith 判断结尾有没有包含某个字符串
+        //includes 判断字符串中有没有包含某个字符串
+
+        //repeat(num)  将字符串重复num次  生成一个新的字符串
+
+        //padStart(num,con)将一个字符串用con补充至num长度 添加在开头
+        //padEnd(num,con) 补充字符串在结尾
+
+        const str = '    hello    world   ';
+        const re1 = str.trimStart();
+        const re2 = str.trimEnd();
+        const re3 = str.trim();
+        console.log(re1);
+        console.log(re2);
+        console.log(re3);
+
+        const Str = 'hello world';
+        console.log(Str.startsWith('hello'));
+        console.log(Str.startsWith('he'));
+        console.log(Str.startsWith('o'));
+        console.log(Str.endsWith('ld'));
+        console.log(Str.includes('hello'));
+        console.log(Str.includes(' '));
+
+
+        const xxx = '岁末将至，敬颂冬绥  ';
+        const res = xxx.repeat(10);
+        console.log(res)
+
+
+        const resp = '岁岁年年，碎碎念念';
+        console.log(resp.padEnd(15,"!"));
+        console.log(resp.padStart(15,"!"));
+
+
+    </script>
+</body>
+</html>
