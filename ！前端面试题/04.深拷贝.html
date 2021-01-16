@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function judgeType(obj) {
+            return Object.prototype.toString.call(obj).slice(8, -1).toLowerCase()
+        }
+
+        function deepClone(obj) {
+            if (judgeType(obj) === 'object') {
+                var  newObj = {}
+            } else if (judgeType(obj) === 'array') {
+                var newObj = []
+            } else {
+                return obj;
+            }
+            for (let key in obj) {
+                newObj[key] = deepClone(obj[key])
+            }
+            return newObj;
+        }
+
+        arr = [1, 2, 5,[4, 5, 4, [2, 3, 6]]]
+        console.log(deepClone(arr))
+    </script>
+</body>
+
+</html>
