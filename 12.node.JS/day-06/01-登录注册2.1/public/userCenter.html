@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>欢迎您:xxx</h3>
+    <script>
+        let name = location.search.split('=')[1]
+        name = decodeURI(name);
+        const h3 = document.querySelector('h3')
+        h3.innerHTML = '欢迎您:'+ name 
+    </script>
+</body>
+</html>
