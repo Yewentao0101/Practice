@@ -7,9 +7,15 @@
   </head>
   <body>
     <form action="http://localhost:3000/login" method="POST">
-      用户名: <input type="text" name="username" /> <br />
-      密  码: <input type="password" name="password" /> <br />
+      用户名: <input type="text" name="username" /><span style="color: red"></span><br />
+      密  码: <input type="password" name="password" /><span style="color: red"></span><br />
       <input type="submit" value="登  录" />
     </form>
+
+    <script>
+      const usename = document.querySelector('input[name = username]')
+      const psw = document.querySelector('input[name = password]')
+      const submit = document.querySelector('input[type = submit]')
+    </script>
   </body>
 </html>
