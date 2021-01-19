@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <!-- 
+        cors原理
+        服务器响应数据的时候，在响应头中响应了Access-Control-Allow-Origin这个信息
+        当浏览器接收到响应之后，浏览器根据同源政策去检查协议，域名，端口号
+        如果有一项不一致就认为数据是不安全的，但是浏览器这个时候 还回去响应头中检查是否有
+        Access-Control-Allow-Origin这个信息，如果值为* 就表示任何域名都可以允许，直接放行数据，js中就能获取到
+
+        cors 优点1.无需写后端 2.支持post请求
+             缺点1.后台实现  2.有兼容性问题
+
+     -->
+
+     <script src="http://localhost:3000/jquer.js"></script>
+     <script>
+        //jq中如何发送ajax请求
+        $('#btn').on('click',function(){
+            $.ajax({
+                type:'post',
+                url:'http://localhost:3000/test',
+                data:{
+                    name:'zs'
+                },
+                timeout:2000,
+                dataType:'json',
+
+                success:function(data){
+                    console.log('成功',data)
+                },
+                error:function(xhr){
+                    console.log('失败','xhr')
+                }
+            })
+        })
+     </script>
+</body>
+</html>

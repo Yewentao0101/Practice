@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <!-- 
+        json原理：利用script标签不收同源策略影响，从直接使用script打src发送请求
+        只是为了接收搭到响应的数据，要求服务器上传一个全局的函数的函数名，这个全局的函数用来接收数据
+        后台接收这个script标签的src的请求之后 将要返回的数据，放在函数调用的实参的位置上
+        script标签请求的数据拿到之后，就是一段函数调用的代码，浏览器会执行这段代码，执行代码的时候
+        我们声明的全局函数就会被调用，就可以通过形参接收到数据
+        优点：兼容性好
+        缺点：1.只能用get请求 （script标签发出的请求是get请求）
+              2.需要后台配合
+              3.在全局声明了函数
+     -->
+
+     <script>
+         //jsonp中定义的接收响应的函数 必须定义在全局
+         function fn(data){
+             //这个data就是接收服务器响应回来的数据
+             console.log(data)
+         }
+
+         const btn = document.getElementById('btn')
+
+         btn.onclick=function(){
+             const script  = document.createElement('script')
+             script.src = 'http://localhost:3000/test?callback=fn'
+             document.body.appendChild(script)
+         }
+     </script>
+</body>
+</html> 

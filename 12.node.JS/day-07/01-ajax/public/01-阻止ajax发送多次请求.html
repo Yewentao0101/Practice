@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn" >按钮</button>
+    <button id="btn1">按钮1</button>
+
+    <script>
+        const btn  =  document.getElementById('btn')
+        const btn1  =  document.getElementById('btn1')
+        const xhr = XMLHttpRequest()
+
+        btn.onclick=function(){
+            xhr.open('get','http://localhost:3000/test')
+            xhr.send()
+            btn.disabled = true
+
+            xhr.onreadystatechange = function(){
+                if (xhr.readyState === 4){
+                    btn.disabled = false
+                    if(xhr.status ===200){
+                        console.log(xhr.responseText)
+                    }
+                }
+            }
+        }
+
+        btn1.onclick = function(){
+            xhr.abort()
+        }
+    </script>
+</body>
+</html>
