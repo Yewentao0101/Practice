@@ -1,0 +1,41 @@
+{
+  "name": "01-webpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "css-loader": "^5.0.1",
+    "less": "^4.1.0",
+    "less-loader": "^7.3.0",
+    "style-loader": "^2.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.18.0",
+    "eslint-loader": "^4.0.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 6, 
+      "sourceType": "module"
+    },
+    "env": { 
+      "browser": true, 
+      "node": true 
+    },
+    "globals": {
+      "$": "readonly"
+    },
+    "rules": {  
+      "no-console": 0, 
+      "eqeqeq": 2,	
+      "no-alert": 2 
+    },
+    "extends": "eslint:recommended"
+  }
+}
