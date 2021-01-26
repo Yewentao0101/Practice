@@ -1,27 +1,55 @@
 // 定义一个根组件
-import React from 'react'
+import React ,{Component} from 'react'
+import Header from './components/Header/Header'
+import Footer from './components/Footer/Footer'
+import List from './components/List/List'
+import './App.css'
 
-import Test from './components/Test'
+export default class App extends Component{
+    state = {
+        list: [
+          {
+            id: 1,
+            todoName: '吃饭',
+            isDone: true,
+          },
+          {
+            id: 2,
+            todoName: '睡觉',
+            isDone: true,
+          },
+          {
+            id: 3,
+            todoName: '找富婆',
+            isDone: false,
+          },
+        ],
+      }
 
-class App extends React.Component {
-  // 上面构造函数的一种解析形式
-  state = { count: 0, masg: 'hehe' }
+      getTodeName = (todoName)=>{
+        let obj={
+          id:Date.now(),
+          todoName,
+          isDone:false,
+        }
 
-  handle = () => {
-    this.setState({
-      count: this.state.count + 1,
-    })
-  }
-
-  render() {
-    // render函数中的this,一定指向当前组件的实例
-    return (
-      <div id="app">
-        <div>{this.state.count}</div>
-        <button onClick={this.handle}>按钮</button>
-        <Test count={this.state.count} />
-      </div>
-    )
-  }
+        let {list}=this.state
+        let newList = [...list]
+        newList.unshift(obj)
+        this.setState({
+          list:newList
+        })
+      }
+    render(){
+        return(
+            <div>
+              <div className="todo-container"></div>
+              <div className="todo-wrap"></div>
+              <Header fn={this.getTodeName}></Header>
+              <List list={this.state.list}></List>
+              <Footer></Footer>
+            </div>
+        )
+    }
 }
-export default App
+ 
