@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import CatUrl from '../assets/cat.gif'
+import CatUrl from '../assets/dog.gif'
 
 import position from '../position'
 
