@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+        <input type="text" placeholder="请输入搜索用户名" v-model="searchName">
+        <ul>
+          <li v-for="person in filterPersons" :key="person.id">
+            {{person.id}} -- {{person.name}} -- {{person.age}}
+          </li>
+        </ul>
+        <button @click="orderType = 'asc'">年龄升序</button>
+        <button @click="orderType = 'desc'">年龄降序</button>
+        <button @click="orderType = 'origin'">原本顺序</button>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        new Vue({
+            el:'#root',
+            data:{
+                searchName: '',
+                orderType: 'origin',
+                persons: [
+                    {id:1,name:'jack',age:13},
+                    {id:2,name:'jams',age:37},
+                    {id:3,name:'jordan',age:48},
+                    {id:4,name:'kebo',age:39},
+                    {id:5,name:'beck',age:26},
+                    {id:6,name:'jeff',age:6},
+                    {id:7,name:'swift',age:28},
+                ],
+            },
+            computed: {
+            // 计算属性：返回过滤后的数据
+            filterPersons() {
+                    // 原数据 this.persons
+                    // 过滤条件 this.searchName
+                    const filterPersons = this.persons.filter((person) => {
+                    // 如果用户名包含了searchName，就保留
+                    return person.name.includes(this.searchName);
+                    // return person.name.indexOf(this.searchName) !== -1;
+                    });
+
+                    // 排序
+                    if (this.orderType === 'origin') return filterPersons;
+
+                    const sortPersons = filterPersons.sort((a, b) => {
+                    return this.orderType === 'asc' ? a.age - b.age : b.age - a.age ;
+                    })
+
+                    return sortPersons;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

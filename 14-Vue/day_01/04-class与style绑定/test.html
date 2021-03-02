@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red{
+          color: red;
+        }
+        .green{
+          color: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <h2>1.class绑定:class='xxx'</h2>
+        <p class="red">这是一段文字</p>
+        <p :class="color">这是一段文字</p>
+        <p :class="{red:isRed,green:!isRed}">这是一段文字</p>
+        <p :class="['red','xxx']">这是一段文字</p>
+         
+        <button @click='changeColor'>改变颜色按钮</button>
+
+        <h2>2.style绑定</h2>
+        <p style="color: red;">这是一段文字</p>
+        <p :style="{color,fontSize:fontSize+'px'}">这是一段文字</p>
+        <input type="text" placeholder="请输入字体大小" v-model='fontSize'> 
+
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        new Vue({
+            el:'#root',
+            data:{
+                color:'red',
+                isRed:'true',
+                fontSize:16
+            },
+            methods:{
+                changeColor(){
+                    this.isRed = !this.isRed
+                }
+            }
+        })
+    </script>
+</body>
+</html>
