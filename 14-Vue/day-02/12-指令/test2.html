@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+        <p v-upper-case='msg'></p>
+        <p v-lower-case='msg'></p>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        Vue.directive('lower-case',function(el,binging){
+            el.textContent = binging.value.toLowerCase()
+        })
+
+        new Vue({
+            el:'#root',
+            data:{
+                msg:'Hello AtGuiGu'
+            },
+            directives: {
+                ['upper-case'](el, binding) {
+                    /*
+                    el element 绑定指令的当前元素
+                    binding 对象：包含指令和表达式的信息
+                    binding.value 表达式的值
+                    */
+                    // console.log(el, binding.value);
+                    el.textContent = binding.value.toUpperCase();
+                }
+            }
+        })
+    </script>
+</body>
+</html>

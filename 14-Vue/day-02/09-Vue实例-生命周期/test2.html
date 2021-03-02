@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+        <button @click='$destroy()'>点我开启快乐时光</button>
+        <p v-show='isShow'>老婆不在家玩的游戏 18禁!</p>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        new Vue({
+            el:'#root',
+            data:{
+                isShow:true,
+            },
+            mounted(){
+                this.timer = setInterval(()=>{
+                    console.log(1111)
+                    this.isShow = !this.isShow
+                },500)
+            },
+            beforeDestroy(){
+                clearInterval(this.timer)
+            }
+        })
+    </script>
+</body>
+</html>

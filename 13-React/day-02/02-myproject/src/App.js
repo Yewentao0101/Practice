@@ -1,19 +1,24 @@
-import React,{Component} from 'react'
-import {Provider} from 'react-redux'
-
-import Count from './container/CountContainer'
-import Demo from './Demo'
-
+import React, { Component } from 'react'
+import { Provider } from 'react-redux'
 import store from './redux/store'
-
-export default class App extends Component{
-    render(){
-        return(
-            <Provider store={store}>
-                <Count></Count>
-                <Demo></Demo>
-            </Provider>
-        ) 
-
-    }
+import Header from './container/HeaderContainer'
+import List from './container/ListContainer'
+import Footer from './container/FooterContainer'
+import './App.css'
+export default class App extends Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <div className="todo-container">
+          <div className="todo-wrap">
+            <Header></Header>
+            <div>
+              <List></List>
+              <Footer></Footer>
+            </div>
+          </div>
+        </div>
+      </Provider>
+    )
+  }
 }

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+        <h2>1.绑定监听 </h2>
+        <button v-on:click='handleClick'>按钮</button>
+        <button @click='handleClick1'>按钮1</button>
+        <button @click='handleClick2(1,2,3,4)'>按钮2</button>
+        <button @click='handleClick3(1,2,$event)'>按钮3</button>
+        <button @click='num++'>按钮4</button>
+        <p>{{num}}</p>
+
+        <h2>2.事件修饰符</h2>
+        <a @click.prevent='handleClick' href="http://www.atguigu.com">xxxxxxxxx</a>
+
+        <div @click='handleClick4'>
+            11111111111111111
+            <div @click.stop='handleClick5'>22222222222222222</div>
+        </div>
+
+        <h3>3.按键修饰符</h3>
+        <input type="text" @keyup.13='handleKeyup'>
+        <input type="text" @keyup.space='handleKeyup'>
+
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        new Vue({
+            el:'#root',
+            data:{
+                num:0
+            },
+            methods:{
+                handleClick(e){e.preventDefault()},
+                handleClick1(event){console.log(event)},
+                handleClick2(){console.log(arguments)},
+                handleClick3(a,b,event){console.log(a,b,event)},
+                handleClick4(){console.log(111111111)},
+                handleClick5(){console.log(222222222)},
+                handleKeyup(){console.log(6666)}
+
+            }
+        })
+    </script>
+</body>
+</html>
