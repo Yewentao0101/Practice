@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button id="btn1">GET</button>
+  <button id="btn2">POST</button>
+  <button id="btn3">PUT</button>
+  <button id="btn4">PATCH</button>
+  <button id="btn5">DELETE</button>
+
+  <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js"></script>
+  <script>
+    const btn1 = document.getElementById('btn1')
+    const btn2 = document.getElementById('btn2')
+    const btn3 = document.getElementById('btn3')
+    const btn4 = document.getElementById('btn4')
+    const btn5 = document.getElementById('btn5')
+
+    btn1.onclick = function () {
+      axios({
+          method: 'GET',
+          url: 'http://localhost:3000/posts',
+          params: {
+            id: '1'
+          }
+        })
+        .then((res) => {
+          console.log(res.data)
+        })
+        .catch(err => console.log(err))
+    }
+    
+    btn2.onclick = function () {
+      axios({
+          method: 'POST',
+          url: 'http://localhost:3000/posts',
+          data:{
+            author:'peihua',
+            title:'文档!!'
+          }
+        })
+        .then((res) => {
+          console.log(res.data)
+        })
+        .catch(err => console.log(err))
+    }
+  
+    btn3.onclick = function () {
+      axios({
+          method: 'PUT',//全部改
+          url: 'http://localhost:3000/posts/2',
+          data:{
+            author:'peihua333',
+            title:'peihua333'
+          }
+        })
+        .then((res) => {
+          console.log(res.data)
+        })
+        .catch(err => console.log(err))
+    }
+
+    btn4.onclick = function () {
+      axios({
+        method: 'PATCH', // 部分改
+        url: 'http://localhost:3000/posts/2',
+        data: {
+          author: "peihua444",
+        }
+      })
+        .then((res) => {
+          console.log(res.data);
+        })
+        .catch(err => console.log(err))
+    }
+
+    btn5.onclick = function () {
+      axios({
+        method: 'DELETE', // 删除 软删除
+        url: 'http://localhost:3000/posts/2'
+      })
+        .then((res) => {
+          console.log(res.data);
+        })
+        .catch(err => console.log(err))
+    }
+  </script>
+</body>
+
+</html>
