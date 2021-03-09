@@ -5,8 +5,8 @@
         <p>尚品汇欢迎您！</p>
         <div>
           请
-          <a href="###" class="header-login-link">登录</a>
-          <a href="###">免费注册</a>
+          <router-link to='/login' class="header-login-link">登录</router-link>
+          <router-link to='/register'>免费注册</router-link>
         </div>
       </div>
       <ul class="header-nav-list">
@@ -22,11 +22,11 @@
     </div>
     <div class="header-bottom">
       <h1 class="header-logo">
-        <a href="###"><img src="./logo.png" alt="logo" /></a>
+        <router-link to='/'><img src="./logo.png" alt="logo" /></router-link>
       </h1>
-      <form action="###" class="header-search">
+      <form  class="header-search" @submit.prevent='toSearch'>
         <input type="text" />
-        <button>搜索</button>
+        <button type='submit'>搜索</button>
       </form>
     </div>
   </header>
@@ -35,6 +35,11 @@
 <script>
 export default {
   name: "Header",
+  methods:{
+    toSearch(){
+      this.$router.history.push('/search')
+    }
+  }
 };
 </script>
 
