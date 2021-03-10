@@ -1,8 +1,8 @@
 <template>
   <!-- 商品分类导航 -->
-  <div class="type-nav">
+  <div class="type-nav" @mouseleave="isSearchShow = false">
     <div class="container">
-      <h2 class="all">全部商品分类</h2>
+      <h2 class="all" @mouseenter="isSearchShow = true">全部商品分类</h2>
       <nav class="nav">
         <a href="###">服装城</a>
         <a href="###">美妆馆</a>
@@ -13,21 +13,104 @@
         <a href="###">有趣</a>
         <a href="###">秒杀</a>
       </nav>
-      <div class="sort">
-        <div class="all-sort-list2">
-          <div class="item bo" v-for='c1 in categoryList' :key='c1.categoryId'>
+      <div class="sort" v-if="isHomeShow || isSearchShow">
+        <div class="all-sort-list2" @click="toSearch">
+          <div class="item bo" v-for="c1 in categoryList" :key="c1.categoryId">
             <h3>
-              <a href="">{{c1.categoryName}}</a>
+              <!--
+                1. 使用路由链接跳转
+                  问题：生成的router-link太多了
+                2. 使用编程式导航
+                  问题：click事件绑定太多了
+                3. 使用事件委托来优化
+               -->
+              <!-- <router-link
+                :to="{
+                  name: 'Search', // 跳转到哪个命名路由
+                  query: {
+                    categoryName: c1.categoryName,
+                    category1Id: c1.categoryId,
+                  },
+                }"
+                >{{ c1.categoryName }}</router-link
+              > -->
+              <!-- <a
+                @click.prevent="
+                  toSearch(c1.categoryName, c1.categoryId, 'category1Id')
+                "
+                >{{ c1.categoryName }}</a
+              > -->
+
+              <a
+                :data-categoryName="c1.categoryName"
+                :data-categoryId="c1.categoryId"
+                data-level="category1Id"
+                >{{ c1.categoryName }}</a
+              >
             </h3>
             <div class="item-list clearfix">
               <div class="subitem">
-                <dl class="fore" v-for='c2 in c1.categoryChild' :key='c2.categoryId'>
+                <dl
+                  class="fore"
+                  v-for="c2 in c1.categoryChild"
+                  :key="c2.categoryId"
+                >
                   <dt>
-                    <a href="">{{c2.categoryName}}</a>
+                    <!-- <router-link
+                      :to="{
+                        name: 'Search', // 跳转到哪个命名路由
+                        query: {
+                          categoryName: c2.categoryName,
+                          category2Id: c2.categoryId,
+                        },
+                      }"
+                      >{{ c2.categoryName }}</router-link
+                    > -->
+
+                    <!-- <a
+                      @click.prevent="
+                        toSearch(c2.categoryName, c2.categoryId, 'category2Id')
+                      "
+                      >{{ c2.categoryName }}</a
+                    > -->
+
+                    <a
+                      :data-categoryName="c2.categoryName"
+                      :data-categoryId="c2.categoryId"
+                      data-level="category2Id"
+                      >{{ c2.categoryName }}</a
+                    >
                   </dt>
                   <dd>
-                    <em v-for='c3 in c2.categoryChild' :key='c3.categoryId'>
-                      <a href="">{{c3.categoryName}}</a>
+                    <em v-for="c3 in c2.categoryChild" :key="c3.categoryId">
+                      <!-- <router-link
+                        :to="{
+                          name: 'Search', // 跳转到哪个命名路由
+                          query: {
+                            categoryName: c3.categoryName,
+                            category3Id: c3.categoryId,
+                          },
+                        }"
+                        >{{ c3.categoryName }}</router-link
+                      > -->
+
+                      <!-- <a
+                        @click.prevent="
+                          toSearch(
+                            c3.categoryName,
+                            c3.categoryId,
+                            'category3Id',
+                          )
+                        "
+                        >{{ c3.categoryName }}</a
+                      > -->
+
+                      <a
+                        :data-categoryName="c3.categoryName"
+                        :data-categoryId="c3.categoryId"
+                        data-level="category3Id"
+                        >{{ c3.categoryName }}</a
+                      >
                     </em>
                   </dd>
                 </dl>
@@ -41,22 +124,54 @@
 </template>
 
 <script>
-import {mapState,mapActions} from "vuex"
+import { mapState, mapActions } from "vuex";
 
 export default {
-  name: 'TypeNav',
-  computed:{
+  name: "TypeNav",
+  data() {
+    return {
+      // categoryList: [],
+      isSearchShow: false,
+      isHomeShow: this.$route.path === "/",
+    };
+  },
+  computed: {
+    // ...mapState(["categoryList"]), // 之前的做法，现在不行了
+    // ...mapState(["home"]), // 可以用，但是太麻烦
     ...mapState({
-      categoryList:(state) => state.home.categoryList,
+      categoryList: (state) => state.home.categoryList,
     }),
   },
-  methods:{
-    ...mapActions(['getBaseCategoryList']),
+  methods: {
+    ...mapActions(["getBaseCategoryList"]), // 可以
+    // toSearch(categoryName, categoryId, level) {
+    //   this.$router.history.push({
+    //     name: "Search",
+    //     query: {
+    //       categoryName,
+    //       [level]: categoryId,
+    //     },
+    //   });
+    // },
+    toSearch(event) {
+      // console.log(event.target.dataset);
+      const { categoryname, categoryid, level } = event.target.dataset;
+
+      if (!level) return;
+
+      this.$router.history.push({
+        name: "Search",
+        query: {
+          categoryName: categoryname,
+          [level]: categoryid,
+        },
+      });
+    },
   },
-  mounted(){
+  mounted() {
     this.getBaseCategoryList();
   },
-}
+};
 </script>
 
 <style  lang="less" scoped>
@@ -171,6 +286,7 @@ export default {
           }
 
           &:hover {
+            background-color: yellowgreen;
             .item-list {
               display: block;
             }

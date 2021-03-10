@@ -5,8 +5,8 @@
         <p>尚品汇欢迎您！</p>
         <div>
           请
-          <router-link to='/login' class="header-login-link">登录</router-link>
-          <router-link to='/register'>免费注册</router-link>
+          <router-link to="/login" class="header-login-link">登录</router-link>
+          <router-link to="/register">免费注册</router-link>
         </div>
       </div>
       <ul class="header-nav-list">
@@ -22,11 +22,12 @@
     </div>
     <div class="header-bottom">
       <h1 class="header-logo">
-        <router-link to='/'><img src="./logo.png" alt="logo" /></router-link>
+        <router-link to="/"><img src="./logo.png" alt="logo" /></router-link>
       </h1>
-      <form  class="header-search" @submit.prevent='toSearch'>
-        <input type="text" />
-        <button type='submit'>搜索</button>
+      <form class="header-search" @submit.prevent="toSearch">
+        <input type="text" v-model="keyword" />
+        <!-- <button @click.prevent="toSearch">搜索</button> -->
+        <button type="submit">搜索</button>
       </form>
     </div>
   </header>
@@ -35,23 +36,48 @@
 <script>
 export default {
   name: "Header",
-  methods:{
-    toSearch(){
-      this.$router.history.push('/search')
-    }
-  }
+  data() {
+    return {
+      keyword: "",
+    };
+  },
+  methods: {
+    toSearch() {
+      const { keyword } = this;
+
+      const location = {
+        name: "Search",
+      };
+
+      if (keyword) {
+        location.params = {
+          keyword,
+        };
+      }
+
+      this.$router.history.push(location);
+
+      // params参数写了必须有值，否则跳转路径会出现问题
+      // this.$router.history.push({
+      //   name: "Search",
+      //   params: {
+      //     keyword: this.keyword,
+      //   },
+      // });
+    },
+  },
 };
 </script>
 
 <style lang="less" scoped>
-.header {
-  border-bottom: 1px solid red;
-}
+// .header {
+//   border-bottom: 1px solid red;
+// }
 .header-nav {
   display: flex;
   justify-content: space-between;
   background-color: #eaeaea;
-  padding: 0 20px;
+  padding: 10px 20px;
   font-size: 12px;
   color: #333;
 }
@@ -61,9 +87,6 @@ export default {
   align-items: center;
   a {
     color: #333;
-  }
-  a:hover{
-    color:#E1251B;
   }
 }
 .header-login-link {
@@ -79,9 +102,6 @@ export default {
     margin-left: 10px;
     padding-left: 10px;
     border-left: 1px solid #333;
-  }
-  a:hover{
-    color:#E1251B;
   }
 
   .header-nav-first {

@@ -10,7 +10,10 @@
   "dependencies": {
     "axios": "^0.21.1",
     "core-js": "^3.9.1",
+    "mock": "^0.1.1",
+    "mockjs": "^1.1.0",
     "nprogress": "^0.2.0",
+    "swiper": "^5.4.5",
     "vue": "^2.6.12",
     "vue-router": "^3.5.1",
     "vuex": "^3.6.2"
@@ -45,7 +48,11 @@
     "rules": {
       "import/extensions": 0,
       "quotes": 0,
-      "implicit-arrow-linebreak": 0
+      "implicit-arrow-linebreak": 0,
+      "linebreak-style":0,
+      "no-shadow":0,
+      "import/newline-after-import":0
+      
     }
   },
   "browserslist": [

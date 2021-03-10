@@ -27,8 +27,8 @@
 
 <script>
 export default {
-  name: 'TodayRecommend',
-}
+  name: "TodayRecommend",
+};
 </script>
 
 <style  lang="less" scoped>
