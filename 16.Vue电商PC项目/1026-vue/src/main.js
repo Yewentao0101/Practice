@@ -20,7 +20,6 @@ Vue.component("TypeNav", TypeNav);
 Vue.component("Carousel", Carousel);
 
 Vue.config.productionTip = false;
-
 new Vue({
   router,
   store,
