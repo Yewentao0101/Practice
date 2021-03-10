@@ -1,15 +1,3 @@
-/*
-  封装axios：
-    1. 设置请求地址前缀和超时时间
-      axios.create
-    2. 设置公共的请求头 token
-      请求拦截器
-    3. 功能成功时得到具体的数据
-      功能失败时得到具体的错误原因
-    4. 设置请求进度条
-    5. 处理跨域
-      代理服务器
-*/
 import axios from "axios";
 import NProgress from "nprogress"; // 引入js
 import "nprogress/nprogress.css"; // 引入css

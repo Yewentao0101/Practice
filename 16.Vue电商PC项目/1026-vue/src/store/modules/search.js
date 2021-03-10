@@ -22,20 +22,6 @@ export const state = {
 export const getters = {};
 
 export const actions = {
-  /*
-    {
-      "category1Id": "",
-      "category2Id": "",
-      "category3Id": "",
-      "categoryName": "",
-      "keyword": "",
-      "order": "",
-      "pageNo": 1,
-      "pageSize": 10,
-      "props": [],
-      "trademark": ""
-    }
-  */
   getGoodsList({ commit }, data) {
     reqGetGoodsList(data)
       .then((searchList) => {

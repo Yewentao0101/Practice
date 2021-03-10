@@ -47,8 +47,6 @@ export default {
             loop: true, // 无缝轮播
             autoplay: {
               delay: 1000, // 自动轮播的时间
-              // stopOnLastSlide: false, // 最后一张不停止自动轮播
-              // disableOnInteraction: true, // 鼠标移入时停止自动轮播
             },
           });
         });

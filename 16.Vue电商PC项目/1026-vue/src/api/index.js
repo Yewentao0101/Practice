@@ -4,13 +4,6 @@
 import request from "./request";
 import mockRequest from "./mockRequest";
 
-// export function reqGetBaseCategoryList() {
-//   return request({
-//     method: 'GET',
-//     url: '/product/getBaseCategoryList'
-//   })
-// }
-
 /**
  * 请求三级分类列表数据
  */
