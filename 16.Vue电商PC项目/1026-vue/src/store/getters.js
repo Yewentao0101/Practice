@@ -8,4 +8,7 @@ export default {
   goodsList(state) {
     return state.search.searchList.goodsList;
   },
+  total(state) {
+    return state.search.searchList.total;
+  },
 };
