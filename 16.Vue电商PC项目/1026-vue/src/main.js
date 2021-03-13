@@ -5,9 +5,12 @@ import Carousel from "@/components/Carousel";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
+
 // 加载mock，让其生效
 
 import "@/assets/css/reset.css";
+import "@/assets/font/iconfont.css";
+import './plugins/element.js';
 
 /* eslint-disable */
 if (process.env.NODE_ENV === "development") {
@@ -20,6 +23,7 @@ Vue.component("TypeNav", TypeNav);
 Vue.component("Carousel", Carousel);
 
 Vue.config.productionTip = false;
+Vue.prototype.$bus = new Vue();
 new Vue({
   router,
   store,

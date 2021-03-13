@@ -1,13 +1,13 @@
-module.exports={
+module.exports = {
   devServer: {
     proxy: {
       '/api': {
-        target: 'http://182.92.128.115',
+        target: 'http://39.98.123.211',
         changeOrigin: true,
         // pathRewrite: {
         //   '^/api': ''
         // }
-      }
-    }
+      },
+    },
   },
-}
+};
