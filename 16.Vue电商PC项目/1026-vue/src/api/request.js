@@ -1,6 +1,19 @@
+/*
+  封装axios：
+    1. 设置请求地址前缀和超时时间
+      axios.create
+    2. 设置公共的请求头 token
+      请求拦截器
+    3. 功能成功时得到具体的数据
+      功能失败时得到具体的错误原因
+    4. 设置请求进度条
+    5. 处理跨域
+      代理服务器
+*/
 import axios from "axios";
 import NProgress from "nprogress"; // 引入js
 import "nprogress/nprogress.css"; // 引入css
+import getUuid from "@/utils/uuid";
 
 const errorMessages = {
   401: "未授权",
@@ -17,6 +30,9 @@ const request = axios.create({
 request.interceptors.request.use((config) => {
   // 开始进度条
   NProgress.start();
+  // 设置公共请求的数据
+  config.headers.userTempId = getUuid(); // ⇨ '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d'
+
   return config;
 });
 

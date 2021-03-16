@@ -5,6 +5,9 @@ import Login from "@/views/Login";
 import Register from "@/views/Register";
 import Home from "@/views/Home";
 import Search from "@/views/Search";
+import Detail from "@/views/Detail";
+import ShopCart from "@/views/ShopCart";
+import AddCartSuccess from "@/views/AddCartSuccess";
 
 Vue.use(VueRouter);
 
@@ -31,24 +34,38 @@ const routes = [
     path: "/search/:keyword?", // 可选params参数
     name: "Search",
     component: Search,
-    // meta: {
-    //   isShowFooter: true
-    // },
   },
   {
     path: "/",
     name: "Home",
     component: Home,
-    // meta: {
-    //   isShowFooter: true
-    // },
+  },
+  {
+    path: "/detail/:id",
+    name: "Detail",
+    component: Detail,
+  },
+  {
+    path: "/addcartsuccess",
+    name: "AddCartSuccess",
+    component: AddCartSuccess,
+  },
+  {
+    path: "/shopcart",
+    name: "ShopCart",
+    component: ShopCart,
   },
 ];
 
 const router = new VueRouter({
   mode: "history",
-  // base: process.env.BASE_URL,
   routes,
+  scrollBehavior() {
+    return {
+      x: 0,
+      y: 0,
+    };
+  },
 });
 
 export default router;

@@ -31,3 +31,9 @@ export const reqGetGoodsList = (data) =>
     url: "/list",
     data,
   });
+
+export const reqGetGoodsDetail = (id) =>
+  request({
+    method: "GET",
+    url: `/item/${id}`,
+  });

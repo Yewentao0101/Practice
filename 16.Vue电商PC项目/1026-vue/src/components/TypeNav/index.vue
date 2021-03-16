@@ -104,7 +104,6 @@
                         "
                         >{{ c3.categoryName }}</a
                       > -->
-
                       <a
                         :data-categoryName="c3.categoryName"
                         :data-categoryId="c3.categoryId"
@@ -130,42 +129,42 @@ export default {
   name: "TypeNav",
   data() {
     return {
-      // categoryList: [],
       isSearchShow: false,
       isHomeShow: this.$route.path === "/",
     };
   },
   computed: {
-    // ...mapState(["categoryList"]), // 之前的做法，现在不行了
-    // ...mapState(["home"]), // 可以用，但是太麻烦
     ...mapState({
       categoryList: (state) => state.home.categoryList,
     }),
   },
   methods: {
     ...mapActions(["getBaseCategoryList"]), // 可以
-    // toSearch(categoryName, categoryId, level) {
-    //   this.$router.history.push({
-    //     name: "Search",
-    //     query: {
-    //       categoryName,
-    //       [level]: categoryId,
-    //     },
-    //   });
-    // },
     toSearch(event) {
-      // console.log(event.target.dataset);
       const { categoryname, categoryid, level } = event.target.dataset;
 
       if (!level) return;
 
-      this.$router.history.push({
+      const location = {
         name: "Search",
-        query: {
-          categoryName: categoryname,
-          [level]: categoryid,
-        },
-      });
+      };
+
+      // 处理query参数
+      const query = {
+        categoryName: categoryname,
+        [level]: categoryid,
+      };
+
+      location.query = query;
+
+      // 处理params参数
+      const { keyword } = this.$route.params;
+
+      if (keyword) {
+        location.params = { keyword };
+      }
+
+      this.$router.history.push(location);
     },
   },
   mounted() {

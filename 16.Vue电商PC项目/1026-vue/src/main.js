@@ -17,7 +17,6 @@ if (process.env.NODE_ENV === "development") {
   require("./mock"); // commonjs
 }
 /* eslint-enable */
-
 // 全局注册组件
 Vue.component("TypeNav", TypeNav);
 Vue.component("Carousel", Carousel);

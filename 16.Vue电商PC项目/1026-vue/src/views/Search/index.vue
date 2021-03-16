@@ -92,9 +92,13 @@
               <li class="yui3-u-1-5" v-for="goods in goodsList" :key="goods.id">
                 <div class="list-wrap">
                   <div class="p-img">
-                    <a href="###" target="_blank"
+                    <router-link
+                      :to="{
+                        name: 'Detail',
+                        params: { id: goods.id },
+                      }"
                       ><img :src="goods.defaultImg"
-                    /></a>
+                    /></router-link>
                   </div>
                   <div class="price">
                     <strong>
@@ -111,22 +115,17 @@
                     <i class="command">已有<span>2000</span>人评价</i>
                   </div>
                   <div class="operate">
-                    <a
-                      href="success-cart.html"
-                      target="_blank"
-                      class="sui-btn btn-bordered btn-danger"
+                    <a target="_blank" class="sui-btn btn-bordered btn-danger"
                       >加入购物车</a
                     >
-                    <a href="javascript:void(0);" class="sui-btn btn-bordered"
-                      >收藏</a
-                    >
+                    <a class="sui-btn btn-bordered">收藏</a>
                   </div>
                 </div>
               </li>
             </ul>
           </div>
           <div class="fr page">
-              <el-pagination
+            <!-- <Pagination
               @size-change="handleSizeChange"
               @current-change="handleCurrentChange"
               :current-page="options.pageNo"
@@ -135,7 +134,18 @@
               layout="prev, pager, next, sizes, total"
               :total="total"
             >
-            </el-pagination>
+            </Pagination> -->
+
+            <Pagination
+              @size-change="handleSizeChange"
+              @current-change="handleCurrentChange"
+              :current-page="options.pageNo"
+              :page-size="options.pageSize"
+              :page-sizes="[5, 10, 15, 20]"
+              :total="total"
+              :pager-count="7"
+            >
+            </Pagination>
           </div>
         </div>
       </div>
@@ -145,6 +155,9 @@
 
 <script>
 import { mapGetters, mapActions } from "vuex";
+// import _ from "lodash"; // 完整引入，打包体积太大
+import debounce from "lodash/debounce"; // 引入某个方法
+import Pagination from "@/components/Pagination";
 import SearchSelector from "./SearchSelector/SearchSelector";
 
 export default {
@@ -242,10 +255,19 @@ export default {
 
       this.search();
     },
-    handleCurrentChange(currentPage) {
-      this.options.pageNo = currentPage;
-      this.search();
-    },
+    // 使用防抖优化函数性能（减少函数触发次数）
+    // https://www.lodashjs.com/docs/lodash.debounce
+    handleCurrentChange: debounce(
+      function (currentPage) {
+        this.options.pageNo = currentPage;
+        this.search();
+      },
+      300,
+      {
+        // 让延迟开始前调用一次
+        leading: true,
+      },
+    ),
     handleSizeChange(pageSize) {
       this.options.pageSize = pageSize;
       this.search();
@@ -280,7 +302,7 @@ export default {
   },
   components: {
     SearchSelector,
-
+    Pagination,
   },
 };
 </script>
@@ -529,90 +551,90 @@ export default {
       }
 
       .page {
-        width: 733px;
         height: 66px;
         overflow: hidden;
-        float: right;
+        display: flex;
+        justify-content: center;
 
-        .sui-pagination {
-          margin: 18px 0;
+        // .sui-pagination {
+        //   margin: 18px 0;
 
-          ul {
-            margin-left: 0;
-            margin-bottom: 0;
-            vertical-align: middle;
-            width: 490px;
-            float: left;
+        //   ul {
+        //     margin-left: 0;
+        //     margin-bottom: 0;
+        //     vertical-align: middle;
+        //     width: 490px;
+        //     float: left;
 
-            li {
-              line-height: 18px;
-              display: inline-block;
+        //     li {
+        //       line-height: 18px;
+        //       display: inline-block;
 
-              a {
-                position: relative;
-                float: left;
-                line-height: 18px;
-                text-decoration: none;
-                background-color: #fff;
-                border: 1px solid #e0e9ee;
-                margin-left: -1px;
-                font-size: 14px;
-                padding: 9px 18px;
-                color: #333;
-              }
+        //       a {
+        //         position: relative;
+        //         float: left;
+        //         line-height: 18px;
+        //         text-decoration: none;
+        //         background-color: #fff;
+        //         border: 1px solid #e0e9ee;
+        //         margin-left: -1px;
+        //         font-size: 14px;
+        //         padding: 9px 18px;
+        //         color: #333;
+        //       }
 
-              &.active {
-                a {
-                  background-color: #fff;
-                  color: #e1251b;
-                  border-color: #fff;
-                  cursor: default;
-                }
-              }
+        //       &.active {
+        //         a {
+        //           background-color: #fff;
+        //           color: #e1251b;
+        //           border-color: #fff;
+        //           cursor: default;
+        //         }
+        //       }
 
-              &.prev {
-                a {
-                  background-color: #fafafa;
-                }
-              }
+        //       &.prev {
+        //         a {
+        //           background-color: #fafafa;
+        //         }
+        //       }
 
-              &.disabled {
-                a {
-                  color: #999;
-                  cursor: default;
-                }
-              }
+        //       &.disabled {
+        //         a {
+        //           color: #999;
+        //           cursor: default;
+        //         }
+        //       }
 
-              &.dotted {
-                span {
-                  margin-left: -1px;
-                  position: relative;
-                  float: left;
-                  line-height: 18px;
-                  text-decoration: none;
-                  background-color: #fff;
-                  font-size: 14px;
-                  border: 0;
-                  padding: 9px 18px;
-                  color: #333;
-                }
-              }
+        //       &.dotted {
+        //         span {
+        //           margin-left: -1px;
+        //           position: relative;
+        //           float: left;
+        //           line-height: 18px;
+        //           text-decoration: none;
+        //           background-color: #fff;
+        //           font-size: 14px;
+        //           border: 0;
+        //           padding: 9px 18px;
+        //           color: #333;
+        //         }
+        //       }
 
-              &.next {
-                a {
-                  background-color: #fafafa;
-                }
-              }
-            }
-          }
+        //       &.next {
+        //         a {
+        //           background-color: #fafafa;
+        //         }
+        //       }
+        //     }
+        //   }
 
-          div {
-            color: #333;
-            font-size: 14px;
-            float: right;
-            width: 241px;
-          }
-        }
+        //   div {
+        //     color: #333;
+        //     font-size: 14px;
+        //     float: right;
+        //     width: 241px;
+        //   }
+        // }
       }
     }
   }
